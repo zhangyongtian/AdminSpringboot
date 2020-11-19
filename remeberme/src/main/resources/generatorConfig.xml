@@ -57,7 +57,7 @@
         <table schema="" tableName="perms"></table>
         <table schema="" tableName="role"></table>
         <table schema="" tableName="soncomment"></table>
-        <table schema="" tableName="user"></table>
+        <table schema="" tableName="useryonghu"></table>
         <table schema="" tableName="userorgin"></table>
 
         <!-- 有些表的字段需要指定java类型

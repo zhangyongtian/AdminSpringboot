@@ -27,7 +27,7 @@
 <DataModels_item1_item0_item1>
   <CTVER>43543230</CTVER>
   <ID>3</ID>
-  <Name>user</Name>
+  <Name>useryonghu</Name>
   <Caption>用户表</Caption>
   <CreateDate>2020/11/18 21:19:05</CreateDate>
   <ModifyDate>1899/12/30</ModifyDate>
@@ -251,7 +251,7 @@ Top=-918.00</GraphDesc>
   <DisplayName>用户的标示</DisplayName>
   <DataType>2</DataType>
   <KeyFieldType>3</KeyFieldType>
-  <RelateTable>user</RelateTable>
+  <RelateTable>useryonghu</RelateTable>
   <RelateField>userid</RelateField>
   <Nullable>1</Nullable>
   <EditorReadOnly>0</EditorReadOnly>
@@ -718,7 +718,7 @@ Top=-645.00</GraphDesc>
   <DisplayName>博客id</DisplayName>
   <DataType>2</DataType>
   <KeyFieldType>3</KeyFieldType>
-  <RelateTable>user</RelateTable>
+  <RelateTable>useryonghu</RelateTable>
   <RelateField>id</RelateField>
   <Nullable>0</Nullable>
   <EditorReadOnly>0</EditorReadOnly>
@@ -1253,7 +1253,7 @@ Top=-774.00</GraphDesc>
   <DisplayName>用户的id</DisplayName>
   <DataType>2</DataType>
   <KeyFieldType>3</KeyFieldType>
-  <RelateTable>user</RelateTable>
+  <RelateTable>useryonghu</RelateTable>
   <RelateField>userid</RelateField>
   <Nullable>1</Nullable>
   <EditorReadOnly>0</EditorReadOnly>
@@ -1398,7 +1398,7 @@ Top=-152.00</GraphDesc>
   <DisplayName>用户的id</DisplayName>
   <DataType>2</DataType>
   <KeyFieldType>3</KeyFieldType>
-  <RelateTable>user</RelateTable>
+  <RelateTable>useryonghu</RelateTable>
   <RelateField>userid</RelateField>
   <Nullable>1</Nullable>
   <EditorReadOnly>0</EditorReadOnly>
@@ -1656,7 +1656,7 @@ Top=-953.00</GraphDesc>
   <DisplayName>用户的id</DisplayName>
   <DataType>2</DataType>
   <KeyFieldType>3</KeyFieldType>
-  <RelateTable>user</RelateTable>
+  <RelateTable>useryonghu</RelateTable>
   <RelateField>userid</RelateField>
   <Nullable>1</Nullable>
   <EditorReadOnly>0</EditorReadOnly>
@@ -1737,7 +1737,7 @@ Top=-426.00</GraphDesc>
   <DisplayName>用户的id</DisplayName>
   <DataType>2</DataType>
   <KeyFieldType>3</KeyFieldType>
-  <RelateTable>user</RelateTable>
+  <RelateTable>useryonghu</RelateTable>
   <RelateField>userid</RelateField>
   <Nullable>1</Nullable>
   <EditorReadOnly>0</EditorReadOnly>
@@ -1833,7 +1833,7 @@ Top=-386.00</GraphDesc>
   <DisplayName>用户的id</DisplayName>
   <DataType>2</DataType>
   <KeyFieldType>3</KeyFieldType>
-  <RelateTable>user</RelateTable>
+  <RelateTable>useryonghu</RelateTable>
   <RelateField>userid</RelateField>
   <Nullable>1</Nullable>
   <EditorReadOnly>0</EditorReadOnly>
