@@ -1,7 +1,5 @@
 package Mapper;
 
-import com.zhang.biyeseji.remeberme.pojo.Perms;
-import com.zhang.biyeseji.remeberme.pojo.PermsExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

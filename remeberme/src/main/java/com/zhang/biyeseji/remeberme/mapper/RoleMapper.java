@@ -1,4 +1,4 @@
-package Mapper;
+package com.zhang.biyeseji.remeberme.mapper;
 
 import com.zhang.biyeseji.remeberme.pojo.Role;
 import com.zhang.biyeseji.remeberme.pojo.RoleExample;

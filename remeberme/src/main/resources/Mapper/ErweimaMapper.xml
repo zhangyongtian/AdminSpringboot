@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Mapper.RoleMapper">
-  <resultMap id="BaseResultMap" type="com.zhang.biyeseji.remeberme.pojo.Role">
-    <result column="roleid" jdbcType="INTEGER" property="roleid" />
-    <result column="rolename" jdbcType="VARCHAR" property="rolename" />
+<mapper namespace="com.zhang.biyeseji.remeberme.mapper.ErweimaMapper">
+  <resultMap id="BaseResultMap" type="com.zhang.biyeseji.remeberme.pojo.Erweima">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="imgurl" jdbcType="VARCHAR" property="imgurl" />
+    <result column="flag" jdbcType="BIT" property="flag" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -64,15 +65,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    roleid, rolename
+    id, imgurl, flag
   </sql>
-  <select id="selectByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.RoleExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.ErweimaExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from role
+    from erweima
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -80,49 +81,58 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.RoleExample">
-    delete from role
+  <delete id="deleteByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.ErweimaExample">
+    delete from erweima
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Role">
-    insert into role (roleid, rolename)
-    values (#{roleid,jdbcType=INTEGER}, #{rolename,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Erweima">
+    insert into erweima (id, imgurl, flag)
+    values (#{id,jdbcType=INTEGER}, #{imgurl,jdbcType=VARCHAR}, #{flag,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.zhang.biyeseji.remeberme.pojo.Role">
-    insert into role
+  <insert id="insertSelective" parameterType="com.zhang.biyeseji.remeberme.pojo.Erweima">
+    insert into erweima
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="roleid != null">
-        roleid,
+      <if test="id != null">
+        id,
       </if>
-      <if test="rolename != null">
-        rolename,
+      <if test="imgurl != null">
+        imgurl,
+      </if>
+      <if test="flag != null">
+        flag,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="roleid != null">
-        #{roleid,jdbcType=INTEGER},
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
       </if>
-      <if test="rolename != null">
-        #{rolename,jdbcType=VARCHAR},
+      <if test="imgurl != null">
+        #{imgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null">
+        #{flag,jdbcType=BIT},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.RoleExample" resultType="java.lang.Long">
-    select count(*) from role
+  <select id="countByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.ErweimaExample" resultType="java.lang.Long">
+    select count(*) from erweima
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update role
+    update erweima
     <set>
-      <if test="record.roleid != null">
-        roleid = #{record.roleid,jdbcType=INTEGER},
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.rolename != null">
-        rolename = #{record.rolename,jdbcType=VARCHAR},
+      <if test="record.imgurl != null">
+        imgurl = #{record.imgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.flag != null">
+        flag = #{record.flag,jdbcType=BIT},
       </if>
     </set>
     <if test="_parameter != null">
@@ -130,9 +140,10 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update role
-    set roleid = #{record.roleid,jdbcType=INTEGER},
-      rolename = #{record.rolename,jdbcType=VARCHAR}
+    update erweima
+    set id = #{record.id,jdbcType=INTEGER},
+      imgurl = #{record.imgurl,jdbcType=VARCHAR},
+      flag = #{record.flag,jdbcType=BIT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

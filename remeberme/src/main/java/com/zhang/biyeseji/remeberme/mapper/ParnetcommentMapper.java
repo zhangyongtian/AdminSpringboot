@@ -1,4 +1,4 @@
-package Mapper;
+package com.zhang.biyeseji.remeberme.mapper;
 
 import com.zhang.biyeseji.remeberme.pojo.Parnetcomment;
 import com.zhang.biyeseji.remeberme.pojo.ParnetcommentExample;

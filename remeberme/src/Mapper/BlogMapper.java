@@ -1,7 +1,5 @@
 package Mapper;
 
-import com.zhang.biyeseji.remeberme.pojo.Blog;
-import com.zhang.biyeseji.remeberme.pojo.BlogExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

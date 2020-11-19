@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Mapper.ErweimaMapper">
-  <resultMap id="BaseResultMap" type="com.zhang.biyeseji.remeberme.pojo.Erweima">
-    <result column="id" jdbcType="INTEGER" property="id" />
-    <result column="imgurl" jdbcType="VARCHAR" property="imgurl" />
-    <result column="flag" jdbcType="BIT" property="flag" />
+<mapper namespace="com.zhang.biyeseji.remeberme.mapper.UserorginMapper">
+  <resultMap id="BaseResultMap" type="com.zhang.biyeseji.remeberme.pojo.Userorgin">
+    <result column="userorginid" jdbcType="INTEGER" property="userorginid" />
+    <result column="userorgincount" jdbcType="INTEGER" property="userorgincount" />
+    <result column="useroriginname" jdbcType="VARCHAR" property="useroriginname" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -65,15 +65,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, imgurl, flag
+    userorginid, userorgincount, useroriginname
   </sql>
-  <select id="selectByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.ErweimaExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.UserorginExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from erweima
+    from userorgin
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -81,58 +81,60 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.ErweimaExample">
-    delete from erweima
+  <delete id="deleteByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.UserorginExample">
+    delete from userorgin
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Erweima">
-    insert into erweima (id, imgurl, flag)
-    values (#{id,jdbcType=INTEGER}, #{imgurl,jdbcType=VARCHAR}, #{flag,jdbcType=BIT})
+  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Userorgin">
+    insert into userorgin (userorginid, userorgincount, useroriginname
+      )
+    values (#{userorginid,jdbcType=INTEGER}, #{userorgincount,jdbcType=INTEGER}, #{useroriginname,jdbcType=VARCHAR}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="com.zhang.biyeseji.remeberme.pojo.Erweima">
-    insert into erweima
+  <insert id="insertSelective" parameterType="com.zhang.biyeseji.remeberme.pojo.Userorgin">
+    insert into userorgin
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
+      <if test="userorginid != null">
+        userorginid,
       </if>
-      <if test="imgurl != null">
-        imgurl,
+      <if test="userorgincount != null">
+        userorgincount,
       </if>
-      <if test="flag != null">
-        flag,
+      <if test="useroriginname != null">
+        useroriginname,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
+      <if test="userorginid != null">
+        #{userorginid,jdbcType=INTEGER},
       </if>
-      <if test="imgurl != null">
-        #{imgurl,jdbcType=VARCHAR},
+      <if test="userorgincount != null">
+        #{userorgincount,jdbcType=INTEGER},
       </if>
-      <if test="flag != null">
-        #{flag,jdbcType=BIT},
+      <if test="useroriginname != null">
+        #{useroriginname,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.ErweimaExample" resultType="java.lang.Long">
-    select count(*) from erweima
+  <select id="countByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.UserorginExample" resultType="java.lang.Long">
+    select count(*) from userorgin
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update erweima
+    update userorgin
     <set>
-      <if test="record.id != null">
-        id = #{record.id,jdbcType=INTEGER},
+      <if test="record.userorginid != null">
+        userorginid = #{record.userorginid,jdbcType=INTEGER},
       </if>
-      <if test="record.imgurl != null">
-        imgurl = #{record.imgurl,jdbcType=VARCHAR},
+      <if test="record.userorgincount != null">
+        userorgincount = #{record.userorgincount,jdbcType=INTEGER},
       </if>
-      <if test="record.flag != null">
-        flag = #{record.flag,jdbcType=BIT},
+      <if test="record.useroriginname != null">
+        useroriginname = #{record.useroriginname,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -140,10 +142,10 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update erweima
-    set id = #{record.id,jdbcType=INTEGER},
-      imgurl = #{record.imgurl,jdbcType=VARCHAR},
-      flag = #{record.flag,jdbcType=BIT}
+    update userorgin
+    set userorginid = #{record.userorginid,jdbcType=INTEGER},
+      userorgincount = #{record.userorgincount,jdbcType=INTEGER},
+      useroriginname = #{record.useroriginname,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

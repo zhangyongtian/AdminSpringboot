@@ -1,7 +1,5 @@
 package Mapper;
 
-import com.zhang.biyeseji.remeberme.pojo.Erweima;
-import com.zhang.biyeseji.remeberme.pojo.ErweimaExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

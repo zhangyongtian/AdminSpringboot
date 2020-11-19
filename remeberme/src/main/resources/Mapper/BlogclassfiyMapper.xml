@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Mapper.BlogtagsMapper">
-  <resultMap id="BaseResultMap" type="com.zhang.biyeseji.remeberme.pojo.Blogtags">
-    <result column="tagid" jdbcType="INTEGER" property="tagid" />
-    <result column="tagname" jdbcType="VARCHAR" property="tagname" />
+<mapper namespace="com.zhang.biyeseji.remeberme.mapper.BlogclassfiyMapper">
+  <resultMap id="BaseResultMap" type="com.zhang.biyeseji.remeberme.pojo.Blogclassfiy">
+    <result column="classfiyid" jdbcType="INTEGER" property="classfiyid" />
+    <result column="classfiyname" jdbcType="VARCHAR" property="classfiyname" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -64,15 +64,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    tagid, tagname
+    classfiyid, classfiyname
   </sql>
-  <select id="selectByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogtagsExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogclassfiyExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from blogtags
+    from blogclassfiy
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -80,49 +80,49 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogtagsExample">
-    delete from blogtags
+  <delete id="deleteByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogclassfiyExample">
+    delete from blogclassfiy
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Blogtags">
-    insert into blogtags (tagid, tagname)
-    values (#{tagid,jdbcType=INTEGER}, #{tagname,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Blogclassfiy">
+    insert into blogclassfiy (classfiyid, classfiyname)
+    values (#{classfiyid,jdbcType=INTEGER}, #{classfiyname,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.zhang.biyeseji.remeberme.pojo.Blogtags">
-    insert into blogtags
+  <insert id="insertSelective" parameterType="com.zhang.biyeseji.remeberme.pojo.Blogclassfiy">
+    insert into blogclassfiy
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="tagid != null">
-        tagid,
+      <if test="classfiyid != null">
+        classfiyid,
       </if>
-      <if test="tagname != null">
-        tagname,
+      <if test="classfiyname != null">
+        classfiyname,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="tagid != null">
-        #{tagid,jdbcType=INTEGER},
+      <if test="classfiyid != null">
+        #{classfiyid,jdbcType=INTEGER},
       </if>
-      <if test="tagname != null">
-        #{tagname,jdbcType=VARCHAR},
+      <if test="classfiyname != null">
+        #{classfiyname,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogtagsExample" resultType="java.lang.Long">
-    select count(*) from blogtags
+  <select id="countByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogclassfiyExample" resultType="java.lang.Long">
+    select count(*) from blogclassfiy
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update blogtags
+    update blogclassfiy
     <set>
-      <if test="record.tagid != null">
-        tagid = #{record.tagid,jdbcType=INTEGER},
+      <if test="record.classfiyid != null">
+        classfiyid = #{record.classfiyid,jdbcType=INTEGER},
       </if>
-      <if test="record.tagname != null">
-        tagname = #{record.tagname,jdbcType=VARCHAR},
+      <if test="record.classfiyname != null">
+        classfiyname = #{record.classfiyname,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -130,9 +130,9 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update blogtags
-    set tagid = #{record.tagid,jdbcType=INTEGER},
-      tagname = #{record.tagname,jdbcType=VARCHAR}
+    update blogclassfiy
+    set classfiyid = #{record.classfiyid,jdbcType=INTEGER},
+      classfiyname = #{record.classfiyname,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

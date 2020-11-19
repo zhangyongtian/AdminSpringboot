@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Mapper.PermsMapper">
-  <resultMap id="BaseResultMap" type="com.zhang.biyeseji.remeberme.pojo.Perms">
-    <result column="permsid" jdbcType="INTEGER" property="permsid" />
-    <result column="permsname" jdbcType="VARCHAR" property="permsname" />
+<mapper namespace="com.zhang.biyeseji.remeberme.mapper.RoleMapper">
+  <resultMap id="BaseResultMap" type="com.zhang.biyeseji.remeberme.pojo.Role">
+    <result column="roleid" jdbcType="INTEGER" property="roleid" />
+    <result column="rolename" jdbcType="VARCHAR" property="rolename" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -64,15 +64,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    permsid, permsname
+    roleid, rolename
   </sql>
-  <select id="selectByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.PermsExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.RoleExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from perms
+    from role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -80,49 +80,49 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.PermsExample">
-    delete from perms
+  <delete id="deleteByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.RoleExample">
+    delete from role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Perms">
-    insert into perms (permsid, permsname)
-    values (#{permsid,jdbcType=INTEGER}, #{permsname,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Role">
+    insert into role (roleid, rolename)
+    values (#{roleid,jdbcType=INTEGER}, #{rolename,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.zhang.biyeseji.remeberme.pojo.Perms">
-    insert into perms
+  <insert id="insertSelective" parameterType="com.zhang.biyeseji.remeberme.pojo.Role">
+    insert into role
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="permsid != null">
-        permsid,
+      <if test="roleid != null">
+        roleid,
       </if>
-      <if test="permsname != null">
-        permsname,
+      <if test="rolename != null">
+        rolename,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="permsid != null">
-        #{permsid,jdbcType=INTEGER},
+      <if test="roleid != null">
+        #{roleid,jdbcType=INTEGER},
       </if>
-      <if test="permsname != null">
-        #{permsname,jdbcType=VARCHAR},
+      <if test="rolename != null">
+        #{rolename,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.PermsExample" resultType="java.lang.Long">
-    select count(*) from perms
+  <select id="countByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.RoleExample" resultType="java.lang.Long">
+    select count(*) from role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update perms
+    update role
     <set>
-      <if test="record.permsid != null">
-        permsid = #{record.permsid,jdbcType=INTEGER},
+      <if test="record.roleid != null">
+        roleid = #{record.roleid,jdbcType=INTEGER},
       </if>
-      <if test="record.permsname != null">
-        permsname = #{record.permsname,jdbcType=VARCHAR},
+      <if test="record.rolename != null">
+        rolename = #{record.rolename,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -130,9 +130,9 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update perms
-    set permsid = #{record.permsid,jdbcType=INTEGER},
-      permsname = #{record.permsname,jdbcType=VARCHAR}
+    update role
+    set roleid = #{record.roleid,jdbcType=INTEGER},
+      rolename = #{record.rolename,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

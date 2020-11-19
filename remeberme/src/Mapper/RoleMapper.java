@@ -1,7 +1,5 @@
 package Mapper;
 
-import com.zhang.biyeseji.remeberme.pojo.Role;
-import com.zhang.biyeseji.remeberme.pojo.RoleExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,7 +1,5 @@
 package Mapper;
 
-import com.zhang.biyeseji.remeberme.pojo.Message;
-import com.zhang.biyeseji.remeberme.pojo.MessageExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

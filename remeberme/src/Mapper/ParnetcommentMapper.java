@@ -1,7 +1,5 @@
 package Mapper;
 
-import com.zhang.biyeseji.remeberme.pojo.Parnetcomment;
-import com.zhang.biyeseji.remeberme.pojo.ParnetcommentExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
