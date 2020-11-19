@@ -26,7 +26,7 @@ class RemebermeApplicationTests {
 		List<String> warnings = new ArrayList<String>();
 		boolean overwrite = true;
 		// 指定配置文件
-		File configFile = new File("generatorConfig.xml");
+		File configFile = new File(String.valueOf(Thread.currentThread().getContextClassLoader().getResource("generatorConfig.xml")).substring(5));
 		ConfigurationParser cp = new ConfigurationParser(warnings);
 		Configuration config = cp.parseConfiguration(configFile);
 		DefaultShellCallback callback = new DefaultShellCallback(overwrite);

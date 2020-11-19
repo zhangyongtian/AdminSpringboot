@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Mapper.BlogclassfiyMapper">
+  <resultMap id="BaseResultMap" type="com.zhang.biyeseji.remeberme.pojo.Blogclassfiy">
+    <result column="classfiyid" jdbcType="INTEGER" property="classfiyid" />
+    <result column="classfiyname" jdbcType="VARCHAR" property="classfiyname" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    classfiyid, classfiyname
+  </sql>
+  <select id="selectByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogclassfiyExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from blogclassfiy
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogclassfiyExample">
+    delete from blogclassfiy
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Blogclassfiy">
+    insert into blogclassfiy (classfiyid, classfiyname)
+    values (#{classfiyid,jdbcType=INTEGER}, #{classfiyname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhang.biyeseji.remeberme.pojo.Blogclassfiy">
+    insert into blogclassfiy
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="classfiyid != null">
+        classfiyid,
+      </if>
+      <if test="classfiyname != null">
+        classfiyname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="classfiyid != null">
+        #{classfiyid,jdbcType=INTEGER},
+      </if>
+      <if test="classfiyname != null">
+        #{classfiyname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogclassfiyExample" resultType="java.lang.Long">
+    select count(*) from blogclassfiy
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update blogclassfiy
+    <set>
+      <if test="record.classfiyid != null">
+        classfiyid = #{record.classfiyid,jdbcType=INTEGER},
+      </if>
+      <if test="record.classfiyname != null">
+        classfiyname = #{record.classfiyname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update blogclassfiy
+    set classfiyid = #{record.classfiyid,jdbcType=INTEGER},
+      classfiyname = #{record.classfiyname,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>
