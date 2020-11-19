@@ -1,0 +1,1885 @@
+<?xml version="1.0" encoding="GB2312"?>
+<CTOXML>
+
+<DataModels>
+  <TableCount>18</TableCount>
+  <Count>1</Count>
+</DataModels>
+
+
+<DataModels_item1>
+  <CTVER>43543230</CTVER>
+  <ID>1</ID>
+  <Name>毕业设计</Name>
+  <CreateDate>2020/11/18 21:12:08</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DefDbEngine>MYSQL</DefDbEngine>
+  <DbConnectStr>TCtMetaMysqlDb</DbConnectStr>
+</DataModels_item1>
+
+
+<DataModels_item1_item0>
+  <Count>18</Count>
+</DataModels_item1_item0>
+
+
+<DataModels_item1_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>3</ID>
+  <Name>user</Name>
+  <Caption>用户表</Caption>
+  <CreateDate>2020/11/18 21:19:05</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <GraphDesc>Left=4.00
+Top=-722.00</GraphDesc>
+</DataModels_item1_item0_item1>
+
+
+<DataModels_item1_item0_item1_item0>
+  <Count>11</Count>
+</DataModels_item1_item0_item1_item0>
+
+
+<DataModels_item1_item0_item1_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>39</ID>
+  <Name>id</Name>
+  <CreateDate>2020/11/18 21:20:03</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DisplayName>id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>1</KeyFieldType>
+  <DefaultValue>{auto_increment}</DefaultValue>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item1_item0_item1>
+
+
+<DataModels_item1_item0_item1_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>40</ID>
+  <Name>userid</Name>
+  <Memo>用户的编号</Memo>
+  <CreateDate>2020/11/18 21:21:56</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>userid</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item1_item0_item2>
+
+
+<DataModels_item1_item0_item1_item0_item3>
+  <CTVER>43543230</CTVER>
+  <ID>41</ID>
+  <Name>username</Name>
+  <Memo>用户名</Memo>
+  <CreateDate>2020/11/18 21:22:43</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>3</OrderNo>
+  <DisplayName>username</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>0</Nullable>
+  <DataLength>20</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item1_item0_item3>
+
+
+<DataModels_item1_item0_item1_item0_item4>
+  <CTVER>43543230</CTVER>
+  <ID>42</ID>
+  <Name>userpassword</Name>
+  <Memo>用户密码</Memo>
+  <CreateDate>2020/11/18 21:24:11</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>4</OrderNo>
+  <DisplayName>userpassword</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>0</Nullable>
+  <DataLength>200</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item1_item0_item4>
+
+
+<DataModels_item1_item0_item1_item0_item5>
+  <CTVER>43543230</CTVER>
+  <ID>43</ID>
+  <Name>useremail</Name>
+  <Memo>用户的邮箱</Memo>
+  <CreateDate>2020/11/18 21:24:40</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>5</OrderNo>
+  <DisplayName>useremail</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>0</Nullable>
+  <DataLength>40</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item1_item0_item5>
+
+
+<DataModels_item1_item0_item1_item0_item6>
+  <CTVER>43543230</CTVER>
+  <ID>44</ID>
+  <Name>createtime</Name>
+  <Memo>注册时间</Memo>
+  <CreateDate>2020/11/18 21:25:45</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>6</OrderNo>
+  <DisplayName>createtime</DisplayName>
+  <DataType>4</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item1_item0_item6>
+
+
+<DataModels_item1_item0_item1_item0_item7>
+  <CTVER>43543230</CTVER>
+  <ID>45</ID>
+  <Name>updatetime</Name>
+  <CreateDate>2020/11/18 21:26:44</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>7</OrderNo>
+  <DisplayName>updatetime</DisplayName>
+  <DataType>4</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item1_item0_item7>
+
+
+<DataModels_item1_item0_item1_item0_item8>
+  <CTVER>43543230</CTVER>
+  <ID>46</ID>
+  <Name>commentcount</Name>
+  <Memo>发表的评论数</Memo>
+  <CreateDate>2020/11/18 21:27:42</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>8</OrderNo>
+  <DisplayName>commentcount</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item1_item0_item8>
+
+
+<DataModels_item1_item0_item1_item0_item9>
+  <CTVER>43543230</CTVER>
+  <ID>47</ID>
+  <Name>userlevel</Name>
+  <Memo>用户的等级和评论数有关</Memo>
+  <CreateDate>2020/11/18 21:28:48</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>9</OrderNo>
+  <DisplayName>userlevel</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item1_item0_item9>
+
+
+<DataModels_item1_item0_item1_item0_item10>
+  <CTVER>43543230</CTVER>
+  <ID>48</ID>
+  <Name>salt</Name>
+  <Memo>用户的盐</Memo>
+  <CreateDate>2020/11/18 21:29:55</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>10</OrderNo>
+  <DisplayName>salt</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>0</Nullable>
+  <DataLength>20</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item1_item0_item10>
+
+
+<DataModels_item1_item0_item1_item0_item11>
+  <CTVER>43543230</CTVER>
+  <ID>49</ID>
+  <Name>userimage</Name>
+  <Memo>用户的头像</Memo>
+  <CreateDate>2020/11/18 21:30:35</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>11</OrderNo>
+  <DisplayName>userimage</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>0</Nullable>
+  <DataLength>100</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item1_item0_item11>
+
+
+<DataModels_item1_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>9</ID>
+  <Name>user_role</Name>
+  <Caption>用户角色关联表</Caption>
+  <CreateDate>2020/11/18 21:39:24</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <GraphDesc>Left=403.00
+Top=-918.00</GraphDesc>
+</DataModels_item1_item0_item2>
+
+
+<DataModels_item1_item0_item2_item0>
+  <Count>3</Count>
+</DataModels_item1_item0_item2_item0>
+
+
+<DataModels_item1_item0_item2_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>143</ID>
+  <Name>userid</Name>
+  <CreateDate>2020/11/18 21:40:02</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DisplayName>用户的标示</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>user</RelateTable>
+  <RelateField>userid</RelateField>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=201.00,-623.00
+P2=311.00,-623.00
+P3=311.00,-883.00
+P4=403.00,-883.00
+HookP1=98.00,99.00
+HookP2=1.00,35.00
+Mod_OP1=0
+Mod_OP2=0
+Mod_CP=1
+Horz1=1
+Horz2=1</GraphDesc>
+</DataModels_item1_item0_item2_item0_item1>
+
+
+<DataModels_item1_item0_item2_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>144</ID>
+  <Name>roleid</Name>
+  <CreateDate>2020/11/18 21:40:14</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>角色的标示</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>role</RelateTable>
+  <RelateField>roleid</RelateField>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=367.00,-999.00
+P2=367.00,42.00
+P3=496.00,42.00
+P4=496.00,-848.00
+HookP1=88.00,27.00
+HookP2=93.00,1.00
+Mod_OP1=1
+Mod_OP2=0
+Mod_CP=1
+Horz1=0
+Horz2=0</GraphDesc>
+</DataModels_item1_item0_item2_item0_item2>
+
+
+<DataModels_item1_item0_item2_item0_item3>
+  <CTVER>43543230</CTVER>
+  <ID>63</ID>
+  <Name>id</Name>
+  <Memo>用于做主键索引</Memo>
+  <CreateDate>2020/11/19 8:55:01</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>3</OrderNo>
+  <DisplayName>表的标识</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>1</KeyFieldType>
+  <DefaultValue>{auto_increment}</DefaultValue>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item2_item0_item3>
+
+
+<DataModels_item1_item0_item3>
+  <CTVER>43543230</CTVER>
+  <ID>7</ID>
+  <Name>role</Name>
+  <Caption>用户权限表</Caption>
+  <CreateDate>2020/11/18 21:34:13</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>3</OrderNo>
+  <GraphDesc>Left=279.00
+Top=-1053.00</GraphDesc>
+</DataModels_item1_item0_item3>
+
+
+<DataModels_item1_item0_item3_item0>
+  <Count>2</Count>
+</DataModels_item1_item0_item3_item0>
+
+
+<DataModels_item1_item0_item3_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>117</ID>
+  <Name>roleid</Name>
+  <Memo>权限的标识</Memo>
+  <CreateDate>2020/11/18 21:35:11</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DisplayName>权限的id</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item3_item0_item1>
+
+
+<DataModels_item1_item0_item3_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>118</ID>
+  <Name>rolename</Name>
+  <Memo>权限的名字</Memo>
+  <CreateDate>2020/11/18 21:36:03</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>权限的名字</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>1</Nullable>
+  <DataLength>20</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item3_item0_item2>
+
+
+<DataModels_item1_item0_item4>
+  <CTVER>43543230</CTVER>
+  <ID>10</ID>
+  <Name>role_perms</Name>
+  <Caption>角色和资源的关联表</Caption>
+  <CreateDate>2020/11/18 21:41:31</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>4</OrderNo>
+  <GraphDesc>Left=723.00
+Top=-991.00</GraphDesc>
+</DataModels_item1_item0_item4>
+
+
+<DataModels_item1_item0_item4_item0>
+  <Count>3</Count>
+</DataModels_item1_item0_item4_item0>
+
+
+<DataModels_item1_item0_item4_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>169</ID>
+  <Name>roleid</Name>
+  <CreateDate>2020/11/18 21:41:58</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DisplayName>角色的标识</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>role</RelateTable>
+  <RelateField>roleid</RelateField>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=455.00,-1018.00
+P2=579.00,-1018.00
+P3=579.00,-956.00
+P4=723.00,-956.00
+HookP1=96.00,35.00
+HookP2=1.00,35.00
+Mod_OP1=0
+Mod_OP2=0
+Mod_CP=1
+Horz1=1
+Horz2=1</GraphDesc>
+</DataModels_item1_item0_item4_item0_item1>
+
+
+<DataModels_item1_item0_item4_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>170</ID>
+  <Name>permsid</Name>
+  <CreateDate>2020/11/18 21:42:27</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>资源的标识</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>perms</RelateTable>
+  <RelateField>permsid</RelateField>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=656.50,-842.00
+P2=590.50,-842.00
+P3=590.50,-948.00
+P4=723.00,-948.00
+HookP1=87.50,27.00
+HookP2=171.50,43.00
+Mod_OP1=0
+Mod_OP2=0
+Mod_CP=1
+Horz1=1
+Horz2=1</GraphDesc>
+</DataModels_item1_item0_item4_item0_item2>
+
+
+<DataModels_item1_item0_item4_item0_item3>
+  <CTVER>43543230</CTVER>
+  <ID>66</ID>
+  <Name>id</Name>
+  <Memo>用户做主键索引</Memo>
+  <CreateDate>2020/11/19 8:56:12</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>3</OrderNo>
+  <DisplayName>表的标识</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>1</KeyFieldType>
+  <DefaultValue>{auto_increment}</DefaultValue>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item4_item0_item3>
+
+
+<DataModels_item1_item0_item5>
+  <CTVER>43543230</CTVER>
+  <ID>8</ID>
+  <Name>perms</Name>
+  <Caption>资源管理权限</Caption>
+  <CreateDate>2020/11/18 21:36:55</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>5</OrderNo>
+  <GraphDesc>Left=656.50
+Top=-869.00</GraphDesc>
+</DataModels_item1_item0_item5>
+
+
+<DataModels_item1_item0_item5_item0>
+  <Count>2</Count>
+</DataModels_item1_item0_item5_item0>
+
+
+<DataModels_item1_item0_item5_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>130</ID>
+  <Name>permsid</Name>
+  <Memo>资源的标示</Memo>
+  <CreateDate>2020/11/18 21:37:01</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DisplayName>资源的标示</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item5_item0_item1>
+
+
+<DataModels_item1_item0_item5_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>131</ID>
+  <Name>permsname</Name>
+  <Memo>资源的表示</Memo>
+  <CreateDate>2020/11/18 21:37:37</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>资源的表示</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>0</Nullable>
+  <DataLength>10</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item5_item0_item2>
+
+
+<DataModels_item1_item0_item6>
+  <CTVER>43543230</CTVER>
+  <ID>16</ID>
+  <Name>blog_tag</Name>
+  <Caption>博客和标签的联系表</Caption>
+  <CreateDate>2020/11/19 8:38:54</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>6</OrderNo>
+  <GraphDesc>Left=961.00
+Top=-363.00</GraphDesc>
+</DataModels_item1_item0_item6>
+
+
+<DataModels_item1_item0_item6_item0>
+  <Count>3</Count>
+</DataModels_item1_item0_item6_item0>
+
+
+<DataModels_item1_item0_item6_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>31</ID>
+  <Name>id</Name>
+  <CreateDate>2020/11/19 8:39:18</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DisplayName>id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>1</KeyFieldType>
+  <DefaultValue>{auto_increment}</DefaultValue>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item6_item0_item1>
+
+
+<DataModels_item1_item0_item6_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>32</ID>
+  <Name>blogid</Name>
+  <Memo>博文的id</Memo>
+  <CreateDate>2020/11/19 8:39:30</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>博文的id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>blog</RelateTable>
+  <RelateField>blogid</RelateField>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=684.00,-431.00
+P2=684.00,-96.00
+P3=1052.00,-96.00
+P4=1052.00,-293.00
+HookP1=95.50,107.00
+HookP2=91.00,1.00
+Mod_OP1=0
+Mod_OP2=0
+Mod_CP=1
+Horz1=0
+Horz2=0</GraphDesc>
+</DataModels_item1_item0_item6_item0_item2>
+
+
+<DataModels_item1_item0_item6_item0_item3>
+  <CTVER>43543230</CTVER>
+  <ID>33</ID>
+  <Name>tagid</Name>
+  <Memo>标签的id</Memo>
+  <CreateDate>2020/11/19 8:39:52</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>3</OrderNo>
+  <DisplayName>标签的id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>blogtags</RelateTable>
+  <RelateField>tagid</RelateField>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=1033.00,-584.00
+P2=1033.00,-474.00
+P3=1060.00,-474.00
+P4=1060.00,-363.00
+HookP1=98.50,27.00
+HookP2=99.00,1.00
+Mod_OP1=0
+Mod_OP2=0
+Mod_CP=0
+Horz1=0
+Horz2=0</GraphDesc>
+</DataModels_item1_item0_item6_item0_item3>
+
+
+<DataModels_item1_item0_item7>
+  <CTVER>43543230</CTVER>
+  <ID>14</ID>
+  <Name>blog_classfiy</Name>
+  <Caption>博客和分类的联系表</Caption>
+  <CreateDate>2020/11/19 6:52:58</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>7</OrderNo>
+  <GraphDesc>Left=558.00
+Top=-377.00</GraphDesc>
+</DataModels_item1_item0_item7>
+
+
+<DataModels_item1_item0_item7_item0>
+  <Count>3</Count>
+</DataModels_item1_item0_item7_item0>
+
+
+<DataModels_item1_item0_item7_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>98</ID>
+  <Name>id</Name>
+  <Memo>id</Memo>
+  <CreateDate>2020/11/19 6:53:42</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DisplayName>id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>1</KeyFieldType>
+  <DefaultValue>{auto_increment}</DefaultValue>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item7_item0_item1>
+
+
+<DataModels_item1_item0_item7_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>99</ID>
+  <Name>blogid</Name>
+  <Memo>关联博客的id</Memo>
+  <CreateDate>2020/11/19 6:54:13</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>博客的id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>blog</RelateTable>
+  <RelateField>blogid</RelateField>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=778.50,-530.00
+P2=793.00,-530.00
+P3=793.00,-342.00
+P4=772.00,-342.00
+HookP1=103.50,115.00
+HookP2=76.50,35.00
+Mod_OP1=0
+Mod_OP2=0
+Mod_CP=1
+Horz1=1
+Horz2=1</GraphDesc>
+</DataModels_item1_item0_item7_item0_item2>
+
+
+<DataModels_item1_item0_item7_item0_item3>
+  <CTVER>43543230</CTVER>
+  <ID>100</ID>
+  <Name>blogclassfiy</Name>
+  <CreateDate>2020/11/19 6:54:52</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>3</OrderNo>
+  <DisplayName>分类的id</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item7_item0_item3>
+
+
+<DataModels_item1_item0_item8>
+  <CTVER>43543230</CTVER>
+  <ID>14</ID>
+  <Name>blog</Name>
+  <Caption>博客表</Caption>
+  <CreateDate>2020/11/18 21:57:03</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>8</OrderNo>
+  <GraphDesc>Left=588.50
+Top=-645.00</GraphDesc>
+</DataModels_item1_item0_item8>
+
+
+<DataModels_item1_item0_item8_item0>
+  <Count>12</Count>
+</DataModels_item1_item0_item8_item0>
+
+
+<DataModels_item1_item0_item8_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>225</ID>
+  <Name>blogid</Name>
+  <Memo>博客id</Memo>
+  <CreateDate>2020/11/18 21:57:15</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DisplayName>博客id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>user</RelateTable>
+  <RelateField>id</RelateField>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=201.00,-615.00
+P2=445.50,-615.00
+P3=445.50,-554.00
+P4=588.50,-554.00
+HookP1=106.00,107.00
+HookP2=1.00,91.00
+Mod_OP1=0
+Mod_OP2=0
+Mod_CP=1
+Horz1=1
+Horz2=1</GraphDesc>
+</DataModels_item1_item0_item8_item0_item1>
+
+
+<DataModels_item1_item0_item8_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>227</ID>
+  <Name>zangcount</Name>
+  <Memo>点赞数</Memo>
+  <CreateDate>2020/11/18 21:58:27</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>点赞数</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item8_item0_item2>
+
+
+<DataModels_item1_item0_item8_item0_item3>
+  <CTVER>43543230</CTVER>
+  <ID>228</ID>
+  <Name>likes</Name>
+  <Memo>喜欢的数量</Memo>
+  <CreateDate>2020/11/18 21:59:23</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>3</OrderNo>
+  <DisplayName>喜欢数</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item8_item0_item3>
+
+
+<DataModels_item1_item0_item8_item0_item4>
+  <CTVER>43543230</CTVER>
+  <ID>229</ID>
+  <Name>headpic</Name>
+  <Memo>首图</Memo>
+  <CreateDate>2020/11/18 21:59:51</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>4</OrderNo>
+  <DisplayName>首图</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item8_item0_item4>
+
+
+<DataModels_item1_item0_item8_item0_item5>
+  <CTVER>43543230</CTVER>
+  <ID>230</ID>
+  <Name>title</Name>
+  <Memo>标题</Memo>
+  <CreateDate>2020/11/18 22:01:08</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>5</OrderNo>
+  <DisplayName>标题</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>0</Nullable>
+  <DataLength>60</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item8_item0_item5>
+
+
+<DataModels_item1_item0_item8_item0_item6>
+  <CTVER>43543230</CTVER>
+  <ID>231</ID>
+  <Name>introduce</Name>
+  <Memo>简介</Memo>
+  <CreateDate>2020/11/18 22:01:42</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>6</OrderNo>
+  <DisplayName>简介</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>0</Nullable>
+  <DataLength>250</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item8_item0_item6>
+
+
+<DataModels_item1_item0_item8_item0_item7>
+  <CTVER>43543230</CTVER>
+  <ID>41</ID>
+  <Name>id</Name>
+  <Memo>用来做主键的索引</Memo>
+  <CreateDate>2020/11/19 6:39:20</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>7</OrderNo>
+  <DisplayName>主键</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>1</KeyFieldType>
+  <DefaultValue>{auto_increment}</DefaultValue>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item8_item0_item7>
+
+
+<DataModels_item1_item0_item8_item0_item8>
+  <CTVER>43543230</CTVER>
+  <ID>42</ID>
+  <Name>userid</Name>
+  <Memo>作者的id</Memo>
+  <CreateDate>2020/11/19 6:41:03</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>8</OrderNo>
+  <DisplayName>用户的id</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item8_item0_item8>
+
+
+<DataModels_item1_item0_item8_item0_item9>
+  <CTVER>43543230</CTVER>
+  <ID>43</ID>
+  <Name>createtime</Name>
+  <Memo>博文创建的时间</Memo>
+  <CreateDate>2020/11/19 6:42:36</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>9</OrderNo>
+  <DisplayName>创建的时间</DisplayName>
+  <DataType>4</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item8_item0_item9>
+
+
+<DataModels_item1_item0_item8_item0_item10>
+  <CTVER>43543230</CTVER>
+  <ID>53</ID>
+  <Name>updatetime</Name>
+  <Memo>博文的更新时间</Memo>
+  <CreateDate>2020/11/19 6:44:21</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>10</OrderNo>
+  <DisplayName>更新时间</DisplayName>
+  <DataType>4</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item8_item0_item10>
+
+
+<DataModels_item1_item0_item8_item0_item11>
+  <CTVER>43543230</CTVER>
+  <ID>156</ID>
+  <Name>content</Name>
+  <Memo>博文的内容</Memo>
+  <CreateDate>2020/11/19 9:38:57</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>11</OrderNo>
+  <DisplayName>博文的内容</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>0</Nullable>
+  <DataLength>5000</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item8_item0_item11>
+
+
+<DataModels_item1_item0_item8_item0_item12>
+  <CTVER>43543230</CTVER>
+  <ID>169</ID>
+  <Name>isfabu</Name>
+  <Memo>是否发布</Memo>
+  <CreateDate>2020/11/19 9:39:49</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>12</OrderNo>
+  <DisplayName>是否发布</DisplayName>
+  <DataType>5</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item8_item0_item12>
+
+
+<DataModels_item1_item0_item9>
+  <CTVER>43543230</CTVER>
+  <ID>11</ID>
+  <Name>blogclassfiy</Name>
+  <Caption>博客分类</Caption>
+  <CreateDate>2020/11/18 21:48:20</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>9</OrderNo>
+  <GraphDesc>Left=576.50
+Top=-224.00</GraphDesc>
+</DataModels_item1_item0_item9>
+
+
+<DataModels_item1_item0_item9_item0>
+  <Count>2</Count>
+</DataModels_item1_item0_item9_item0>
+
+
+<DataModels_item1_item0_item9_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>186</ID>
+  <Name>classfiyid</Name>
+  <CreateDate>2020/11/18 21:49:10</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DisplayName>博客分类id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>blog_classfiy</RelateTable>
+  <RelateField>blogclassfiy</RelateField>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=673.00,-307.00
+P2=673.00,-266.00
+P3=672.00,-266.00
+P4=672.00,-224.00
+HookP1=115.00,43.00
+HookP2=95.50,1.00
+Mod_OP1=0
+Mod_OP2=0
+Mod_CP=0
+Horz1=0
+Horz2=0</GraphDesc>
+</DataModels_item1_item0_item9_item0_item1>
+
+
+<DataModels_item1_item0_item9_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>187</ID>
+  <Name>classfiyname</Name>
+  <CreateDate>2020/11/18 21:50:08</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>分类的标识</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>0</Nullable>
+  <DataLength>30</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item9_item0_item2>
+
+
+<DataModels_item1_item0_item10>
+  <CTVER>43543230</CTVER>
+  <ID>12</ID>
+  <Name>blogtags</Name>
+  <Caption>博客的标签</Caption>
+  <CreateDate>2020/11/18 21:53:16</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>10</OrderNo>
+  <GraphDesc>Left=934.50
+Top=-638.00</GraphDesc>
+</DataModels_item1_item0_item10>
+
+
+<DataModels_item1_item0_item10_item0>
+  <Count>2</Count>
+</DataModels_item1_item0_item10_item0>
+
+
+<DataModels_item1_item0_item10_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>199</ID>
+  <Name>tagid</Name>
+  <CreateDate>2020/11/18 21:53:40</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DisplayName>博客的标签id</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item10_item0_item1>
+
+
+<DataModels_item1_item0_item10_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>200</ID>
+  <Name>tagname</Name>
+  <CreateDate>2020/11/18 21:54:01</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>博客标签名</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>0</Nullable>
+  <DataLength>30</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item10_item0_item2>
+
+
+<DataModels_item1_item0_item11>
+  <CTVER>43543230</CTVER>
+  <ID>13</ID>
+  <Name>erweima</Name>
+  <Caption>照片墙还有就是二维码为真</Caption>
+  <CreateDate>2020/11/18 21:55:09</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>11</OrderNo>
+  <GraphDesc>Left=788.50
+Top=-786.00</GraphDesc>
+</DataModels_item1_item0_item11>
+
+
+<DataModels_item1_item0_item11_item0>
+  <Count>3</Count>
+</DataModels_item1_item0_item11_item0>
+
+
+<DataModels_item1_item0_item11_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>212</ID>
+  <Name>id</Name>
+  <CreateDate>2020/11/18 21:56:08</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DataType>2</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item11_item0_item1>
+
+
+<DataModels_item1_item0_item11_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>213</ID>
+  <Name>imgurl</Name>
+  <CreateDate>2020/11/18 21:56:25</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DataType>1</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item11_item0_item2>
+
+
+<DataModels_item1_item0_item11_item0_item3>
+  <CTVER>43543230</CTVER>
+  <ID>265</ID>
+  <Name>flag</Name>
+  <CreateDate>2020/11/18 22:12:27</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>3</OrderNo>
+  <DisplayName>用于判断是否二维码</DisplayName>
+  <DataType>5</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item11_item0_item3>
+
+
+<DataModels_item1_item0_item12>
+  <CTVER>43543230</CTVER>
+  <ID>15</ID>
+  <Name>userorgin</Name>
+  <Caption>用户来源表</Caption>
+  <CreateDate>2020/11/18 22:05:37</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>12</OrderNo>
+  <GraphDesc>Left=26.00
+Top=-291.00</GraphDesc>
+</DataModels_item1_item0_item12>
+
+
+<DataModels_item1_item0_item12_item0>
+  <Count>3</Count>
+</DataModels_item1_item0_item12_item0>
+
+
+<DataModels_item1_item0_item12_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>244</ID>
+  <Name>userorginid</Name>
+  <Memo>用户来源的id</Memo>
+  <CreateDate>2020/11/18 22:05:55</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DisplayName>用户来源的id</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item12_item0_item1>
+
+
+<DataModels_item1_item0_item12_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>245</ID>
+  <Name>userorgincount</Name>
+  <Memo>用户来源计数</Memo>
+  <CreateDate>2020/11/18 22:06:28</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>用户来源计数</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item12_item0_item2>
+
+
+<DataModels_item1_item0_item12_item0_item3>
+  <CTVER>43543230</CTVER>
+  <ID>246</ID>
+  <Name>useroriginname</Name>
+  <Memo>用户来源</Memo>
+  <CreateDate>2020/11/18 22:07:17</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>3</OrderNo>
+  <DisplayName>用户来源</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>1</Nullable>
+  <DataLength>50</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item12_item0_item3>
+
+
+<DataModels_item1_item0_item13>
+  <CTVER>43543230</CTVER>
+  <ID>16</ID>
+  <Name>message</Name>
+  <Caption>作者留言</Caption>
+  <CreateDate>2020/11/18 22:08:48</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>13</OrderNo>
+  <GraphDesc>Left=479.00
+Top=-774.00</GraphDesc>
+</DataModels_item1_item0_item13>
+
+
+<DataModels_item1_item0_item13_item0>
+  <Count>5</Count>
+</DataModels_item1_item0_item13_item0>
+
+
+<DataModels_item1_item0_item13_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>258</ID>
+  <Name>id</Name>
+  <Memo>留言的id</Memo>
+  <CreateDate>2020/11/18 22:09:03</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DisplayName>留言的id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>1</KeyFieldType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item13_item0_item1>
+
+
+<DataModels_item1_item0_item13_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>259</ID>
+  <Name>message</Name>
+  <Memo>作者的留言</Memo>
+  <CreateDate>2020/11/18 22:09:17</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>留言</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>1</Nullable>
+  <DataLength>250</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item13_item0_item2>
+
+
+<DataModels_item1_item0_item13_item0_item3>
+  <CTVER>43543230</CTVER>
+  <ID>260</ID>
+  <Name>createtime</Name>
+  <Memo>留言创建的时间</Memo>
+  <CreateDate>2020/11/18 22:10:02</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>3</OrderNo>
+  <DisplayName>创建的时间</DisplayName>
+  <DataType>4</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item13_item0_item3>
+
+
+<DataModels_item1_item0_item13_item0_item4>
+  <CTVER>43543230</CTVER>
+  <ID>261</ID>
+  <Name>updatetime</Name>
+  <Memo>留言的更改时间</Memo>
+  <CreateDate>2020/11/18 22:10:35</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>4</OrderNo>
+  <DisplayName>更改的时间</DisplayName>
+  <DataType>4</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item13_item0_item4>
+
+
+<DataModels_item1_item0_item13_item0_item5>
+  <CTVER>43543230</CTVER>
+  <ID>38</ID>
+  <Name>userid</Name>
+  <Memo>发表留言的用户id</Memo>
+  <CreateDate>2020/11/19 8:42:29</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>5</OrderNo>
+  <DisplayName>用户的id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>user</RelateTable>
+  <RelateField>userid</RelateField>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=201.00,-639.00
+P2=340.00,-639.00
+P3=340.00,-723.00
+P4=479.00,-723.00
+HookP1=82.00,83.00
+HookP2=1.00,51.00
+Mod_OP1=0
+Mod_OP2=0
+Mod_CP=0
+Horz1=1
+Horz2=1</GraphDesc>
+</DataModels_item1_item0_item13_item0_item5>
+
+
+<DataModels_item1_item0_item14>
+  <CTVER>43543230</CTVER>
+  <ID>17</ID>
+  <Name>parnetcomment</Name>
+  <Caption>第一条评论就是首评论</Caption>
+  <CreateDate>2020/11/18 22:13:41</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>14</OrderNo>
+  <GraphDesc>Left=147.00
+Top=-152.00</GraphDesc>
+</DataModels_item1_item0_item14>
+
+
+<DataModels_item1_item0_item14_item0>
+  <Count>9</Count>
+</DataModels_item1_item0_item14_item0>
+
+
+<DataModels_item1_item0_item14_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>277</ID>
+  <Name>parnetcommentid</Name>
+  <Memo>评论的id</Memo>
+  <CreateDate>2020/11/18 22:14:20</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DisplayName>第一条评论的id</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item14_item0_item1>
+
+
+<DataModels_item1_item0_item14_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>278</ID>
+  <Name>comment</Name>
+  <Memo>第一条评论的内容</Memo>
+  <CreateDate>2020/11/18 22:14:36</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>评论的内容</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>0</Nullable>
+  <DataLength>250</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item14_item0_item2>
+
+
+<DataModels_item1_item0_item14_item0_item3>
+  <CTVER>43543230</CTVER>
+  <ID>279</ID>
+  <Name>createtime</Name>
+  <Memo>评论的时间</Memo>
+  <CreateDate>2020/11/18 22:15:27</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>3</OrderNo>
+  <DisplayName>评论时间</DisplayName>
+  <DataType>4</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item14_item0_item3>
+
+
+<DataModels_item1_item0_item14_item0_item4>
+  <CTVER>43543230</CTVER>
+  <ID>280</ID>
+  <Name>zangcount</Name>
+  <Memo>点赞数</Memo>
+  <CreateDate>2020/11/18 22:16:13</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>4</OrderNo>
+  <DisplayName>点赞数</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item14_item0_item4>
+
+
+<DataModels_item1_item0_item14_item0_item5>
+  <CTVER>43543230</CTVER>
+  <ID>281</ID>
+  <Name>likes</Name>
+  <Memo>喜欢数</Memo>
+  <CreateDate>2020/11/18 22:16:47</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>5</OrderNo>
+  <DisplayName>喜欢的数目</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item14_item0_item5>
+
+
+<DataModels_item1_item0_item14_item0_item6>
+  <CTVER>43543230</CTVER>
+  <ID>6</ID>
+  <Name>blogid</Name>
+  <Memo>博客的id号码</Memo>
+  <CreateDate>2020/11/19 6:29:42</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>6</OrderNo>
+  <DisplayName>博客id</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item14_item0_item6>
+
+
+<DataModels_item1_item0_item14_item0_item7>
+  <CTVER>43543230</CTVER>
+  <ID>7</ID>
+  <Name>userid</Name>
+  <Memo>谁评论的内容</Memo>
+  <CreateDate>2020/11/19 6:30:23</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>7</OrderNo>
+  <DisplayName>用户的id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>user</RelateTable>
+  <RelateField>userid</RelateField>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=126.00,-524.00
+P2=126.00,-172.00
+P3=263.00,-172.00
+P4=263.00,-152.00
+HookP1=122.00,123.00
+HookP2=116.00,1.00
+Mod_OP1=0
+Mod_OP2=0
+Mod_CP=1
+Horz1=0
+Horz2=0</GraphDesc>
+</DataModels_item1_item0_item14_item0_item7>
+
+
+<DataModels_item1_item0_item14_item0_item8>
+  <CTVER>43543230</CTVER>
+  <ID>15</ID>
+  <Name>id</Name>
+  <CreateDate>2020/11/19 6:31:16</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>8</OrderNo>
+  <DisplayName>id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>1</KeyFieldType>
+  <DefaultValue>{auto_increment}</DefaultValue>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item14_item0_item8>
+
+
+<DataModels_item1_item0_item14_item0_item9>
+  <CTVER>43543230</CTVER>
+  <ID>16</ID>
+  <Name>updatetime</Name>
+  <Memo>评论更新的时间</Memo>
+  <CreateDate>2020/11/19 6:32:20</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>9</OrderNo>
+  <DisplayName>更新时间</DisplayName>
+  <DataType>4</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item14_item0_item9>
+
+
+<DataModels_item1_item0_item15>
+  <CTVER>43543230</CTVER>
+  <ID>18</ID>
+  <Name>soncomment</Name>
+  <Caption>子评论</Caption>
+  <CreateDate>2020/11/18 22:18:09</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>15</OrderNo>
+  <GraphDesc>Left=482.00
+Top=-153.00</GraphDesc>
+</DataModels_item1_item0_item15>
+
+
+<DataModels_item1_item0_item15_item0>
+  <Count>8</Count>
+</DataModels_item1_item0_item15_item0>
+
+
+<DataModels_item1_item0_item15_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>293</ID>
+  <Name>id</Name>
+  <Memo>二级评论</Memo>
+  <CreateDate>2020/11/18 22:18:25</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DisplayName>二级评论的id</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item15_item0_item1>
+
+
+<DataModels_item1_item0_item15_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>294</ID>
+  <Name>comment</Name>
+  <Memo>内容</Memo>
+  <CreateDate>2020/11/18 22:18:44</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>评论的内容</DisplayName>
+  <DataType>1</DataType>
+  <Nullable>0</Nullable>
+  <DataLength>250</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item15_item0_item2>
+
+
+<DataModels_item1_item0_item15_item0_item3>
+  <CTVER>43543230</CTVER>
+  <ID>295</ID>
+  <Name>createtime</Name>
+  <Memo>创建的时间</Memo>
+  <CreateDate>2020/11/18 22:19:25</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>3</OrderNo>
+  <DisplayName>创建的时间</DisplayName>
+  <DataType>4</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item15_item0_item3>
+
+
+<DataModels_item1_item0_item15_item0_item4>
+  <CTVER>43543230</CTVER>
+  <ID>296</ID>
+  <Name>updatetime</Name>
+  <Memo>修改的时间</Memo>
+  <CreateDate>2020/11/18 22:19:53</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>4</OrderNo>
+  <DisplayName>修改的时间</DisplayName>
+  <DataType>4</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item15_item0_item4>
+
+
+<DataModels_item1_item0_item15_item0_item5>
+  <CTVER>43543230</CTVER>
+  <ID>297</ID>
+  <Name>parentid</Name>
+  <Memo>一级评论的id</Memo>
+  <CreateDate>2020/11/18 22:20:20</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>5</OrderNo>
+  <DisplayName>父亲评论的id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>parnetcomment</RelateTable>
+  <RelateField>parnetcommentid</RelateField>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=379.00,-61.00
+P2=430.00,-61.00
+P3=430.00,-78.00
+P4=482.00,-78.00
+HookP1=124.00,91.00
+HookP2=1.00,75.00
+Mod_OP1=1
+Mod_OP2=0
+Mod_CP=0
+Horz1=1
+Horz2=1</GraphDesc>
+</DataModels_item1_item0_item15_item0_item5>
+
+
+<DataModels_item1_item0_item15_item0_item6>
+  <CTVER>43543230</CTVER>
+  <ID>22</ID>
+  <Name>zangcount</Name>
+  <Memo>点赞的数量</Memo>
+  <CreateDate>2020/11/19 6:33:59</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>6</OrderNo>
+  <DisplayName>点赞数</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item15_item0_item6>
+
+
+<DataModels_item1_item0_item15_item0_item7>
+  <CTVER>43543230</CTVER>
+  <ID>23</ID>
+  <Name>likes</Name>
+  <Memo>喜欢的数量</Memo>
+  <CreateDate>2020/11/19 6:34:52</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>7</OrderNo>
+  <DisplayName>喜欢的数量</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item15_item0_item7>
+
+
+<DataModels_item1_item0_item15_item0_item8>
+  <CTVER>43543230</CTVER>
+  <ID>24</ID>
+  <Name>userid</Name>
+  <Memo>用户的id</Memo>
+  <CreateDate>2020/11/19 6:35:43</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>8</OrderNo>
+  <DisplayName>用户的id</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item15_item0_item8>
+
+
+<DataModels_item1_item0_item16>
+  <CTVER>43543230</CTVER>
+  <ID>18</ID>
+  <Name>user_guanzhu_user</Name>
+  <Caption>用户关注的自联系表</Caption>
+  <CreateDate>2020/11/19 9:15:23</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>16</OrderNo>
+  <GraphDesc>Left=27.00
+Top=-953.00</GraphDesc>
+</DataModels_item1_item0_item16>
+
+
+<DataModels_item1_item0_item16_item0>
+  <Count>3</Count>
+</DataModels_item1_item0_item16_item0>
+
+
+<DataModels_item1_item0_item16_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>92</ID>
+  <Name>id</Name>
+  <CreateDate>2020/11/19 9:15:49</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DataType>2</DataType>
+  <KeyFieldType>1</KeyFieldType>
+  <DefaultValue>{auto_increment}</DefaultValue>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item16_item0_item1>
+
+
+<DataModels_item1_item0_item16_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>93</ID>
+  <Name>userid</Name>
+  <Memo>用户自己的id</Memo>
+  <CreateDate>2020/11/19 9:16:07</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>用户的id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>user</RelateTable>
+  <RelateField>userid</RelateField>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=70.00,-722.00
+P2=70.00,-802.00
+P3=154.00,-802.00
+P4=154.00,-883.00
+HookP1=66.00,67.00
+HookP2=127.00,70.00
+Mod_OP1=0
+Mod_OP2=0
+Mod_CP=0
+Horz1=0
+Horz2=0</GraphDesc>
+</DataModels_item1_item0_item16_item0_item2>
+
+
+<DataModels_item1_item0_item16_item0_item3>
+  <CTVER>43543230</CTVER>
+  <ID>94</ID>
+  <Name>xinxinid</Name>
+  <Memo>用户关注人的id</Memo>
+  <CreateDate>2020/11/19 9:16:30</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>3</OrderNo>
+  <DisplayName>用户关注作者的id</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item16_item0_item3>
+
+
+<DataModels_item1_item0_item17>
+  <CTVER>43543230</CTVER>
+  <ID>19</ID>
+  <Name>user_likes_blogs</Name>
+  <Caption>用户喜欢的博文关系表</Caption>
+  <CreateDate>2020/11/19 9:19:23</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>17</OrderNo>
+  <GraphDesc>Left=257.00
+Top=-426.00</GraphDesc>
+</DataModels_item1_item0_item17>
+
+
+<DataModels_item1_item0_item17_item0>
+  <Count>3</Count>
+</DataModels_item1_item0_item17_item0>
+
+
+<DataModels_item1_item0_item17_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>106</ID>
+  <Name>id</Name>
+  <Memo>标识</Memo>
+  <CreateDate>2020/11/19 9:20:06</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DataType>2</DataType>
+  <KeyFieldType>1</KeyFieldType>
+  <DefaultValue>{auto_increment}</DefaultValue>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item17_item0_item1>
+
+
+<DataModels_item1_item0_item17_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>107</ID>
+  <Name>userid</Name>
+  <Memo>用户的id</Memo>
+  <CreateDate>2020/11/19 9:20:21</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>用户的id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>user</RelateTable>
+  <RelateField>userid</RelateField>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=142.00,-524.00
+P2=142.00,-464.00
+P3=380.00,-464.00
+P4=380.00,-426.00
+HookP1=138.00,139.00
+HookP2=123.00,1.00
+Mod_OP1=0
+Mod_OP2=0
+Mod_CP=1
+Horz1=0
+Horz2=0</GraphDesc>
+</DataModels_item1_item0_item17_item0_item2>
+
+
+<DataModels_item1_item0_item17_item0_item3>
+  <CTVER>43543230</CTVER>
+  <ID>108</ID>
+  <Name>blogid</Name>
+  <Memo>博客的id</Memo>
+  <CreateDate>2020/11/19 9:20:49</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>3</OrderNo>
+  <DisplayName>博客的id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>blog</RelateTable>
+  <RelateField>blogid</RelateField>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=588.50,-514.00
+P2=546.00,-514.00
+P3=546.00,-383.00
+P4=504.00,-383.00
+HookP1=119.50,131.00
+HookP2=247.00,43.00
+Mod_OP1=0
+Mod_OP2=0
+Mod_CP=1
+Horz1=1
+Horz2=1</GraphDesc>
+</DataModels_item1_item0_item17_item0_item3>
+
+
+<DataModels_item1_item0_item18>
+  <CTVER>43543230</CTVER>
+  <ID>21</ID>
+  <Name>user_zang_blog</Name>
+  <Caption>用户点赞博客</Caption>
+  <CreateDate>2020/11/19 9:34:37</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>18</OrderNo>
+  <GraphDesc>Left=-184.00
+Top=-386.00</GraphDesc>
+</DataModels_item1_item0_item18>
+
+
+<DataModels_item1_item0_item18_item0>
+  <Count>3</Count>
+</DataModels_item1_item0_item18_item0>
+
+
+<DataModels_item1_item0_item18_item0_item1>
+  <CTVER>43543230</CTVER>
+  <ID>131</ID>
+  <Name>id</Name>
+  <Memo>标识主键索引</Memo>
+  <CreateDate>2020/11/19 9:35:16</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>1</OrderNo>
+  <DisplayName>标识</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>1</KeyFieldType>
+  <DefaultValue>{auto_increment}</DefaultValue>
+  <Nullable>0</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item18_item0_item1>
+
+
+<DataModels_item1_item0_item18_item0_item2>
+  <CTVER>43543230</CTVER>
+  <ID>132</ID>
+  <Name>useid</Name>
+  <Memo>用户的id</Memo>
+  <CreateDate>2020/11/19 9:36:03</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>2</OrderNo>
+  <DisplayName>用户的id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>user</RelateTable>
+  <RelateField>userid</RelateField>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=54.00,-524.00
+P2=54.00,-455.00
+P3=-93.00,-455.00
+P4=-93.00,-386.00
+HookP1=50.00,51.00
+HookP2=91.00,1.00
+Mod_OP1=0
+Mod_OP2=0
+Mod_CP=0
+Horz1=0
+Horz2=0</GraphDesc>
+</DataModels_item1_item0_item18_item0_item2>
+
+
+<DataModels_item1_item0_item18_item0_item3>
+  <CTVER>43543230</CTVER>
+  <ID>133</ID>
+  <Name>blogid</Name>
+  <Memo>博文的id</Memo>
+  <CreateDate>2020/11/19 9:36:35</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>3</OrderNo>
+  <DisplayName>博文的id</DisplayName>
+  <DataType>2</DataType>
+  <KeyFieldType>3</KeyFieldType>
+  <RelateTable>blog</RelateTable>
+  <RelateField>blogid</RelateField>
+  <Nullable>1</Nullable>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+  <GraphDesc>P1=588.50,-570.00
+P2=293.00,-570.00
+P3=293.00,-343.00
+P4=-2.00,-343.00
+HookP1=63.50,75.00
+HookP2=182.00,43.00
+Mod_OP1=0
+Mod_OP2=0
+Mod_CP=0
+Horz1=1
+Horz2=1</GraphDesc>
+</DataModels_item1_item0_item18_item0_item3>
+
+
+</CTOXML>
