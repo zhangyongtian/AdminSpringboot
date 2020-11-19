@@ -1,2 +1,4 @@
 # AdminSpringboot
 毕业设计后台springboot代码
+11月19日进行用户注册授权开发使用的是shrio
+
