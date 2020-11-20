@@ -58,6 +58,13 @@
 			<scope>test</scope>
 		</dependency>
 
+<!--对象编程json-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.66</version>
+		</dependency>
+
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
@@ -75,6 +82,13 @@
 			<artifactId>mybatis-generator-maven-plugin</artifactId>
 			<version>1.4.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring-boot-starter</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

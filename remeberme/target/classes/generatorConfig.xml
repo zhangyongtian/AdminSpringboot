@@ -28,7 +28,7 @@
         </javaTypeResolver>
 
         <!-- targetProject：生成POJO类的位置 -->
-        <javaModelGenerator targetPackage="com.zhang.biyeseji.remeberme.pojo" targetProject="src">
+        <javaModelGenerator targetPackage="com.zhang.biyeseji.remeberme.pojo" targetProject="./src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
             <!-- 从数据库返回的值被清理前后的空格 -->
@@ -36,13 +36,13 @@
         </javaModelGenerator>
 
         <!-- targetProject：mapper映射文件生成的位置 -->
-        <sqlMapGenerator targetPackage="com.zhang.biyeseji.remeberme.mapper"  targetProject="src">
+        <sqlMapGenerator targetPackage="./src/main/resources/Mapper"  targetProject="./src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
         </sqlMapGenerator>
 
         <!-- targetProject：mapper接口生成的的位置 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="Mapper"  targetProject="src">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zhang.biyeseji.remeberme.mapper"  targetProject="./src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
@@ -57,7 +57,7 @@
         <table schema="" tableName="perms"></table>
         <table schema="" tableName="role"></table>
         <table schema="" tableName="soncomment"></table>
-        <table schema="" tableName="user"></table>
+        <table schema="" tableName="useryonghu"></table>
         <table schema="" tableName="userorgin"></table>
 
         <!-- 有些表的字段需要指定java类型

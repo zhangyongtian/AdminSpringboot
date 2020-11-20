@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhang.biyeseji.remeberme.mapper.BlogMapper">
+  <resultMap id="BaseResultMap" type="com.zhang.biyeseji.remeberme.pojo.Blog">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="blogid" jdbcType="INTEGER" property="blogid" />
+    <result column="zangcount" jdbcType="INTEGER" property="zangcount" />
+    <result column="likes" jdbcType="INTEGER" property="likes" />
+    <result column="headpic" jdbcType="VARCHAR" property="headpic" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="introduce" jdbcType="VARCHAR" property="introduce" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="isfabu" jdbcType="BIT" property="isfabu" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, blogid, zangcount, likes, headpic, title, introduce, userid, createtime, updatetime, 
+    content, isfabu
+  </sql>
+  <select id="selectByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from blog
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from blog
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from blog
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogExample">
+    delete from blog
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Blog">
+    insert into blog (id, blogid, zangcount, 
+      likes, headpic, title, 
+      introduce, userid, createtime, 
+      updatetime, content, isfabu
+      )
+    values (#{id,jdbcType=INTEGER}, #{blogid,jdbcType=INTEGER}, #{zangcount,jdbcType=INTEGER}, 
+      #{likes,jdbcType=INTEGER}, #{headpic,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{introduce,jdbcType=VARCHAR}, #{userid,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{updatetime,jdbcType=TIMESTAMP}, #{content,jdbcType=VARCHAR}, #{isfabu,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhang.biyeseji.remeberme.pojo.Blog">
+    insert into blog
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="blogid != null">
+        blogid,
+      </if>
+      <if test="zangcount != null">
+        zangcount,
+      </if>
+      <if test="likes != null">
+        likes,
+      </if>
+      <if test="headpic != null">
+        headpic,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="introduce != null">
+        introduce,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="isfabu != null">
+        isfabu,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="blogid != null">
+        #{blogid,jdbcType=INTEGER},
+      </if>
+      <if test="zangcount != null">
+        #{zangcount,jdbcType=INTEGER},
+      </if>
+      <if test="likes != null">
+        #{likes,jdbcType=INTEGER},
+      </if>
+      <if test="headpic != null">
+        #{headpic,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null">
+        #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="isfabu != null">
+        #{isfabu,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogExample" resultType="java.lang.Long">
+    select count(*) from blog
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update blog
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.blogid != null">
+        blogid = #{record.blogid,jdbcType=INTEGER},
+      </if>
+      <if test="record.zangcount != null">
+        zangcount = #{record.zangcount,jdbcType=INTEGER},
+      </if>
+      <if test="record.likes != null">
+        likes = #{record.likes,jdbcType=INTEGER},
+      </if>
+      <if test="record.headpic != null">
+        headpic = #{record.headpic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.title != null">
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.introduce != null">
+        introduce = #{record.introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userid != null">
+        userid = #{record.userid,jdbcType=INTEGER},
+      </if>
+      <if test="record.createtime != null">
+        createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updatetime != null">
+        updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.content != null">
+        content = #{record.content,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isfabu != null">
+        isfabu = #{record.isfabu,jdbcType=BIT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update blog
+    set id = #{record.id,jdbcType=INTEGER},
+      blogid = #{record.blogid,jdbcType=INTEGER},
+      zangcount = #{record.zangcount,jdbcType=INTEGER},
+      likes = #{record.likes,jdbcType=INTEGER},
+      headpic = #{record.headpic,jdbcType=VARCHAR},
+      title = #{record.title,jdbcType=VARCHAR},
+      introduce = #{record.introduce,jdbcType=VARCHAR},
+      userid = #{record.userid,jdbcType=INTEGER},
+      createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      content = #{record.content,jdbcType=VARCHAR},
+      isfabu = #{record.isfabu,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhang.biyeseji.remeberme.pojo.Blog">
+    update blog
+    <set>
+      <if test="blogid != null">
+        blogid = #{blogid,jdbcType=INTEGER},
+      </if>
+      <if test="zangcount != null">
+        zangcount = #{zangcount,jdbcType=INTEGER},
+      </if>
+      <if test="likes != null">
+        likes = #{likes,jdbcType=INTEGER},
+      </if>
+      <if test="headpic != null">
+        headpic = #{headpic,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null">
+        introduce = #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="isfabu != null">
+        isfabu = #{isfabu,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhang.biyeseji.remeberme.pojo.Blog">
+    update blog
+    set blogid = #{blogid,jdbcType=INTEGER},
+      zangcount = #{zangcount,jdbcType=INTEGER},
+      likes = #{likes,jdbcType=INTEGER},
+      headpic = #{headpic,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      introduce = #{introduce,jdbcType=VARCHAR},
+      userid = #{userid,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      content = #{content,jdbcType=VARCHAR},
+      isfabu = #{isfabu,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

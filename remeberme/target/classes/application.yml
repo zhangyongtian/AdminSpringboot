@@ -1,5 +1,7 @@
 server:
-  port: 8080
+  port: 8089
+  servlet:
+    context-path: /rememberme
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -7,4 +9,9 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
-
+  redis:
+    port: 6379
+    database: 0
+    host: 10.10.10.18
+mybatis:
+  mapper-locations: classpath:/Mapper/*.xml
