@@ -25,6 +25,7 @@ public class Useryonghu {
 
     private String userimage;
 
+
     public Integer getId() {
         return id;
     }
@@ -32,6 +33,7 @@ public class Useryonghu {
     public void setId(Integer id) {
         this.id = id;
     }
+
 
     public Integer getUserid() {
         return userid;
@@ -108,6 +110,7 @@ public class Useryonghu {
     public String getUserimage() {
         return userimage;
     }
+
 
     public void setUserimage(String userimage) {
         this.userimage = userimage == null ? null : userimage.trim();

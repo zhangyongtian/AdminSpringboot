@@ -106,7 +106,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Useryonghu">
+  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Useryonghu" useGeneratedKeys="true" keyProperty="id">
     insert into useryonghu (id, userid, username, 
       userpassword, useremail, createtime, 
       updatetime, commentcount, userlevel, 

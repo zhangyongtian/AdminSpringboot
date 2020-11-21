@@ -1,6 +1,7 @@
 package com.zhang.biyeseji.remeberme;
 
 import com.zhang.biyeseji.remeberme.util.VerificationUtil;
+import com.zhang.biyeseji.remeberme.util.mail.IMailService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.generator.api.MyBatisGenerator;
@@ -9,7 +10,10 @@ import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.exception.InvalidConfigurationException;
 import org.mybatis.generator.exception.XMLParserException;
 import org.mybatis.generator.internal.DefaultShellCallback;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.File;
@@ -20,9 +24,13 @@ import java.util.List;
 
 import static java.lang.Math.random;
 
-//@SpringBootTest
-//@RunWith(SpringRunner.class)
+@SpringBootTest
+@RunWith(SpringRunner.class)
 class RemebermeApplicationTests {
+	@Autowired
+	private IMailService iMailService;
+//	@Autowired
+//	JavaMailSenderImpl javaMailSender;
 //mybatis自动生成代码的关键代码
 //	@Test
 //	void contextLoads() throws InvalidConfigurationException, IOException, XMLParserException, SQLException, InterruptedException {
@@ -39,8 +47,8 @@ class RemebermeApplicationTests {
 //	}
 	@Test
 	public void myTest(){
-		VerificationUtil verificationUtil=VerificationUtil.getInstance();
-		String result=verificationUtil.getRandRomVerification();
-		System.out.println(result);
+//		iMailService.sendHtmlMail("zhangyongtianaa@sina.com","html邮件测试","898989");
+//		iMailService.sendSimpleMail("zhangyongtianaa@sina.com","html邮件测试","898989");
+//		iMailService.sendAttachmentsMail("zhangyongtianaa@sina.com","html邮件测试","<h1>内容：第一封html邮件</h1>","D:\\centos\\1.jpg");
 	}
 }
