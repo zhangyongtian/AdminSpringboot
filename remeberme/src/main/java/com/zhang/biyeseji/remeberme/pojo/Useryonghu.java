@@ -1,6 +1,7 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class Useryonghu {
     private Integer id;
@@ -25,6 +26,25 @@ public class Useryonghu {
 
     private String userimage;
 
+    private List<Role> roles;
+
+    private Integer siginType;
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+
+    public Integer getSiginType() {
+        return siginType;
+    }
+
+    public void setSiginType(Integer siginType) {
+        this.siginType = siginType;
+    }
 
     public Integer getId() {
         return id;

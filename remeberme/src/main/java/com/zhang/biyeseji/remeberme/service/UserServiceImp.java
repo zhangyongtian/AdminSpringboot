@@ -26,4 +26,14 @@ public class UserServiceImp implements UserService {
         userAndRole.setRoleid(1);
         userAndRoleMapper.insertUserAndRole(userAndRole);
     }
+
+    @Override
+    public Useryonghu selectUseryonghuByName(String username) {
+        return useryonghuMapper.selectUseryonghuByname(username);
+    }
+
+    @Override
+    public Useryonghu selectUseryonghuByEmail(String useremail) {
+        return useryonghuMapper.selectUseryonghuByEmail(useremail);
+    }
 }

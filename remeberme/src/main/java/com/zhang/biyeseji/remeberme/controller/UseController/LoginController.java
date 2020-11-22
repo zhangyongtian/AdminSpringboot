@@ -63,10 +63,10 @@ public class LoginController {
         try {
             stringRedisTemplate.opsForValue().set(toEmail, verifica, 60, TimeUnit.SECONDS);
             iMailService.sendHtmlMail(toEmail,"RememberMe的验证邮件",verifica);
+            return JSONResult.ok();
         } catch (MessagingException e) {
             return JSONResult.errorMsg("您输入的邮箱有错误没有办法发送");
         }
-        return JSONResult.ok();
     }
 
     //下面是处理用户注册

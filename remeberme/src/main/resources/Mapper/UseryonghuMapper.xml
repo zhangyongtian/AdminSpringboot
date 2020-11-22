@@ -76,6 +76,23 @@
     id, userid, username, userpassword, useremail, createtime, updatetime, commentcount, 
     userlevel, salt, userimage
   </sql>
+  <resultMap id="UseryonghuByname" type="com.zhang.biyeseji.remeberme.pojo.Useryonghu">
+<!--    select useryonghu.id as userid ,useryonghu.username as username
+,useryonghu.userpassword as userpassword,-->
+<!--    useryonghu.userlevel as userlevel,useryonghu.userimage as
+userimage,role.rolename as rolename from useryonghu-->
+    <id property="id" column="userid"></id>
+    <result property="username" column="username"></result>
+    <result property="userpassword" column="userpassword"></result>
+    <result property="userlevel" column="userlevel"></result>
+    <result property="userimage" column="userimage"></result>
+    <result property="useremail" column="useremail"></result>
+    <result property="salt" column="salt"></result>
+    <collection property="roles" javaType="java.util.List" ofType="com.zhang.biyeseji.remeberme.pojo.Role">
+      <result property="roleid" column="roleid"></result>
+      <result property="rolename" column="rolename"></result>
+    </collection>
+  </resultMap>
   <select id="selectByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.UseryonghuExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -89,6 +106,24 @@
     <if test="orderByClause != null">
       order by ${orderByClause}
     </if>
+  </select>
+<!--#################################################-->
+<!--  这里是用户名查询用户还有用户拥有的角色-->
+  <select id="selectUseryonghuByname" parameterType="java.lang.String" resultMap="UseryonghuByname">
+        select useryonghu.salt as salt, role.roleid as roleid , useryonghu.useremail as useremail,useryonghu.id as userid ,useryonghu.username as username,useryonghu.userpassword as userpassword,
+        useryonghu.userlevel as userlevel,useryonghu.userimage as userimage,role.rolename as rolename from useryonghu
+        left join user_role on user_role.userid=useryonghu.id
+        left join role on user_role.roleid=role.roleid
+        where useryonghu.username=#{username};
+  </select>
+  <!--#################################################-->
+  <!--  这里是用户邮箱查询用户还有用户拥有的角色-->
+  <select id="selectUseryonghuByEmail" parameterType="java.lang.String" resultMap="UseryonghuByname">
+        select useryonghu.salt as salt, useryonghu.useremail as useremail, role.roleid as roleid , useryonghu.id as userid ,useryonghu.username as username,useryonghu.userpassword as userpassword,
+        useryonghu.userlevel as userlevel,useryonghu.userimage as userimage,role.rolename as rolename from useryonghu
+        left join user_role on user_role.userid=useryonghu.id
+        left join role on user_role.roleid=role.roleid
+        where useryonghu.useremail=#{useremail};
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

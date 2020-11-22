@@ -27,4 +27,8 @@ public interface UseryonghuMapper {
     int updateByPrimaryKeySelective(Useryonghu record);
 
     int updateByPrimaryKey(Useryonghu record);
+
+    Useryonghu selectUseryonghuByname(String username);
+
+    Useryonghu selectUseryonghuByEmail(String useremail);
 }
