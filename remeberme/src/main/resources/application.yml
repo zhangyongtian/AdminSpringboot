@@ -24,3 +24,5 @@ mybatis:
 salt: rememberme
 defaultuserimg: https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1155785496,4012400290&fm=26&gp=0.jpg
 hashcount: 50
+mysign: rememberyou
+mailupdatepasswordverfi: 11

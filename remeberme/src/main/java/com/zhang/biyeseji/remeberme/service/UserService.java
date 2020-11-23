@@ -8,4 +8,6 @@ public interface UserService {
     Useryonghu selectUseryonghuByName(String username);
 
     Useryonghu selectUseryonghuByEmail(String useremail);
+
+    void updateUser(String userEmail, String userpassword);
 }

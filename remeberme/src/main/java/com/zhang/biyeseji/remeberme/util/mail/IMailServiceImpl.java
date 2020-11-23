@@ -79,7 +79,7 @@ public class IMailServiceImpl implements IMailService {
                         "\t\t\t<img src=\""+defaultuserimg+"\" alt=\"\" style=\"margin: auto;display: block;\">\n" +
                         "\t\t\t<h1>您好欢迎使用rememberme</h1>\n" +
                         "\t\t\t<div>\n" +
-                        "\t\t\t\t<h3>下面是您的验证码，快去注册体验吧</h3>\n" +
+                        "\t\t\t\t<h3>下面是您的验证码，快去体验吧</h3>\n" +
                         "\t\t\t\t<h3>"+content+"</h3>\n" +
                         "\t\t\t</div>\n" +
                         "\t\t</div>", true);

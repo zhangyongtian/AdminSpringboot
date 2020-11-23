@@ -3,7 +3,9 @@ import com.zhang.biyeseji.remeberme.mapper.UserAndRoleMapper;
 import com.zhang.biyeseji.remeberme.mapper.UseryonghuMapper;
 import com.zhang.biyeseji.remeberme.pojo.UserAndRole;
 import com.zhang.biyeseji.remeberme.pojo.Useryonghu;
+import com.zhang.biyeseji.remeberme.pojo.UseryonghuExample;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,5 +37,15 @@ public class UserServiceImp implements UserService {
     @Override
     public Useryonghu selectUseryonghuByEmail(String useremail) {
         return useryonghuMapper.selectUseryonghuByEmail(useremail);
+    }
+
+    @Override
+    public void updateUser(String userEmail, String userpassword) {
+        Useryonghu useryonghu=new Useryonghu();
+        useryonghu.setUserpassword(userpassword);
+        UseryonghuExample useryonghuExample=new UseryonghuExample();
+        UseryonghuExample.Criteria criteria = useryonghuExample.createCriteria();
+        criteria.andUseremailEqualTo(userEmail);
+        useryonghuMapper.updateByExampleSelective(useryonghu,useryonghuExample);
     }
 }

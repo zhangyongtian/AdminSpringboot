@@ -53,11 +53,17 @@ public class LoginController {
         return "开始喽";
     }
 
-//    下面是通过邮箱获取二维码的代码
+//    下面是通过邮箱获取验证码的代码
     @RequestMapping(value = "/getVerificationToEmail")
     @CrossOrigin
     public JSONResult getVerificationToEmail(@RequestBody Verification verification){
+        //如果是同一个邮箱就只能有一个账号
         String toEmail=verification.getEmail();
+        Useryonghu useryonghu1=userService.selectUseryonghuByEmail(toEmail);
+        if(null!=useryonghu1){
+            return JSONResult.errorMsg("这个邮箱已经注册过账号了");
+        }
+
         String verifica=verificationUtil.getRandRomVerification();
         System.out.println(verifica);
         try {
@@ -73,6 +79,7 @@ public class LoginController {
     @RequestMapping("/userrigister")
     @CrossOrigin
     public JSONResult userRigister(@RequestBody UserRegister userRegister){
+
         //这里就是注册过的不能够在注册了
 
         //这里的代码是新用户注册
