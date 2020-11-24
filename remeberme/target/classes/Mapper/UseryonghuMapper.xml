@@ -83,11 +83,15 @@
 userimage,role.rolename as rolename from useryonghu-->
     <id property="id" column="userid"></id>
     <result property="username" column="username"></result>
+    <result property="userid" column="uid"></result>
     <result property="userpassword" column="userpassword"></result>
     <result property="userlevel" column="userlevel"></result>
     <result property="userimage" column="userimage"></result>
     <result property="useremail" column="useremail"></result>
+    <result property="createtime" column="usercreatetime"></result>
+    <result property="updatetime" column="userupdatetime"></result>
     <result property="salt" column="salt"></result>
+    <result property="commentcount" column="usercommentcount"></result>
     <collection property="roles" javaType="java.util.List" ofType="com.zhang.biyeseji.remeberme.pojo.Role">
       <result property="roleid" column="roleid"></result>
       <result property="rolename" column="rolename"></result>
@@ -110,8 +114,8 @@ userimage,role.rolename as rolename from useryonghu-->
 <!--#################################################-->
 <!--  这里是用户名查询用户还有用户拥有的角色-->
   <select id="selectUseryonghuByname" parameterType="java.lang.String" resultMap="UseryonghuByname">
-        select useryonghu.salt as salt, role.roleid as roleid , useryonghu.useremail as useremail,useryonghu.id as userid ,useryonghu.username as username,useryonghu.userpassword as userpassword,
-        useryonghu.userlevel as userlevel,useryonghu.userimage as userimage,role.rolename as rolename from useryonghu
+        select useryonghu.updatetime as userupdatetime, useryonghu.createtime as usercreatetime , useryonghu.userid as uid,useryonghu.salt as salt, role.roleid as roleid , useryonghu.useremail as useremail,useryonghu.id as userid ,useryonghu.username as username,useryonghu.userpassword as userpassword,
+        useryonghu.commentcount as usercommentcount,useryonghu.userlevel as userlevel,useryonghu.userimage as userimage,role.rolename as rolename from useryonghu
         left join user_role on user_role.userid=useryonghu.id
         left join role on user_role.roleid=role.roleid
         where useryonghu.username=#{username};
@@ -119,8 +123,8 @@ userimage,role.rolename as rolename from useryonghu-->
   <!--#################################################-->
   <!--  这里是用户邮箱查询用户还有用户拥有的角色-->
   <select id="selectUseryonghuByEmail" parameterType="java.lang.String" resultMap="UseryonghuByname">
-        select useryonghu.salt as salt, useryonghu.useremail as useremail, role.roleid as roleid , useryonghu.id as userid ,useryonghu.username as username,useryonghu.userpassword as userpassword,
-        useryonghu.userlevel as userlevel,useryonghu.userimage as userimage,role.rolename as rolename from useryonghu
+        select useryonghu.updatetime as userupdatetime, useryonghu.createtime as usercreatetime , useryonghu.userid as uid,useryonghu.salt as salt, role.roleid as roleid , useryonghu.useremail as useremail,useryonghu.id as userid ,useryonghu.username as username,useryonghu.userpassword as userpassword,
+        useryonghu.commentcount as usercommentcount,useryonghu.userlevel as userlevel,useryonghu.userimage as userimage,role.rolename as rolename from useryonghu
         left join user_role on user_role.userid=useryonghu.id
         left join role on user_role.roleid=role.roleid
         where useryonghu.useremail=#{useremail};
