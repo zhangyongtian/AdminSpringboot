@@ -107,7 +107,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Blog">
+  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Blog" useGeneratedKeys="true" keyProperty="id">
     insert into blog (id, blogid, zangcount, 
       likes, headpic, title, 
       introduce, userid, createtime, 

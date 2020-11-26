@@ -66,6 +66,11 @@
   <sql id="Base_Column_List">
     tagid, tagname
   </sql>
+
+<!--  这里是查询所有-->
+  <select id="selectTagsAll" resultType="com.zhang.biyeseji.remeberme.pojo.Blogtags">
+    select * from blogtags;
+  </select>
   <select id="selectByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogtagsExample" resultMap="BaseResultMap">
     select
     <if test="distinct">

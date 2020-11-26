@@ -19,4 +19,6 @@ public interface BlogtagsMapper {
     int updateByExampleSelective(@Param("record") Blogtags record, @Param("example") BlogtagsExample example);
 
     int updateByExample(@Param("record") Blogtags record, @Param("example") BlogtagsExample example);
+
+    List<Blogtags> selectTagsAll();
 }

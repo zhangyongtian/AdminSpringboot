@@ -19,4 +19,6 @@ public interface BlogclassfiyMapper {
     int updateByExampleSelective(@Param("record") Blogclassfiy record, @Param("example") BlogclassfiyExample example);
 
     int updateByExample(@Param("record") Blogclassfiy record, @Param("example") BlogclassfiyExample example);
+
+    List<Blogclassfiy> selectClassfiyAll();
 }

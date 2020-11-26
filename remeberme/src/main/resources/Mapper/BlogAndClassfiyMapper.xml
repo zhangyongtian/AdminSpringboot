@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhang.biyeseji.remeberme.mapper.BlogAndClassfiyMapper">
+  <insert useGeneratedKeys="true" keyProperty="id" id="saveBlogAndClassfiy" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogAndClassfiy">
+        insert into blog_classfiy(blogid,blogclassfiy) values(#{blogid},#{blogclassfiy})
+  </insert>
+  <insert id="saveBlogAndClassfiyList" parameterType="java.util.List">
+      <selectKey resultType ="java.lang.Integer" keyProperty= "id"
+            order= "AFTER">
+            SELECT LAST_INSERT_ID()
+     </selectKey >
+      insert into blog_classfiy(blogid,blogclassfiy) values
+      <foreach collection ="list" item="reddemCode" index= "index" separator =",">
+         (
+          #{reddemCode.blogid},#{reddemCode.blogclassfiy}
+         )
+      </foreach >
+  </insert>
+</mapper>

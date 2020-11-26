@@ -66,6 +66,12 @@
   <sql id="Base_Column_List">
     classfiyid, classfiyname
   </sql>
+
+<!--  获取所有的分类-->
+  <select id="selectClassfiyAll" resultType="com.zhang.biyeseji.remeberme.pojo.Blogclassfiy">
+        select * from blogclassfiy;
+  </select>
+
   <select id="selectByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogclassfiyExample" resultMap="BaseResultMap">
     select
     <if test="distinct">

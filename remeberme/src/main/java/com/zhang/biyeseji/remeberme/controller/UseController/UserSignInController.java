@@ -162,7 +162,6 @@ public class UserSignInController {
         useryonghu.setUserpassword(null);
         useryonghu.setUserid(null);
         useryonghu.setSalt(null);
-        useryonghu.setId(null);
         for (Role role : useryonghu.getRoles()) {
             role.setRoleid(null);
         }

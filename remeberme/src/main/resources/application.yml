@@ -21,8 +21,22 @@ spring:
     host: 10.10.10.18
 mybatis:
   mapper-locations: classpath:/Mapper/*.xml
+  log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 salt: rememberme
 defaultuserimg: https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1155785496,4012400290&fm=26&gp=0.jpg
 hashcount: 50
 mysign: rememberyou
 mailupdatepasswordverfi: 11
+
+
+#配置fdfs连接
+
+fdfs:
+  tracker-list: 10.10.10.18:22122
+  so-timeout: 1501
+  connect-timeout: 601
+#图片服务器的地址
+imgserve: http://10.10.10.18/zhang/
+logging:
+  level:
+    com.zhang.biyeseji.remeberme.mapper: trace
