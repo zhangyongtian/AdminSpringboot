@@ -1,10 +1,11 @@
 package com.zhang.biyeseji.remeberme.service;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.zhang.biyeseji.remeberme.mapper.*;
-import com.zhang.biyeseji.remeberme.pojo.Blog;
-import com.zhang.biyeseji.remeberme.pojo.BlogAndClassfiy;
-import com.zhang.biyeseji.remeberme.pojo.BlogAndTag;
-import com.zhang.biyeseji.remeberme.pojo.BlogContent;
+import com.zhang.biyeseji.remeberme.pojo.*;
+import com.zhang.biyeseji.remeberme.util.PageRequest;
+import com.zhang.biyeseji.remeberme.util.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,6 +25,9 @@ public class BlogServiceImp implements BlogService{
 
     @Autowired
     BlogAndTagMapper blogAndTagMapper;
+
+    @Autowired
+    UseryonghuMapper useryonghuMapper;
 
     @Override
     public void saveBlog(BlogContent blogContent) {
@@ -66,4 +70,31 @@ public class BlogServiceImp implements BlogService{
         blogAndTagMapper.saveBlogAndTagList(blogAndTagList);
 
     }
+
+    @Override
+    public PageResult getPageResultBlog(PageRequest pageRequest) {
+        int startPage=pageRequest.getPageNum();
+        int pageNum=pageRequest.getPageSize();
+        Page page=PageHelper.startPage(startPage,pageNum);
+        List<Blog> bloglist = blogMapper.getPageResultBlog();
+        bloglist.forEach(blog -> {
+            Integer userid=blog.getUserid();
+            Useryonghu useryonghu=useryonghuMapper.selectByPrimaryKey(userid);
+            blog.setUseryonghu(useryonghu);
+            List<Blogclassfiy> classfiys=blogMapper.selectClassfiysByblogId(blog.getId());
+            blog.setBlogclassfiys(classfiys);
+            List<Blogtags> blogtags=blogMapper.selectTagsByblogId(blog.getId());
+            blog.setBlogtags(blogtags);
+
+        });
+        PageResult pageResult=new PageResult();
+        pageResult.setContent(bloglist);
+        pageResult.setPageNum(pageRequest.getPageNum());
+        pageResult.setPageSize(pageRequest.getPageSize());
+        pageResult.setTotalPages(page.getPages());
+        pageResult.setTotalSize(page.getTotal());
+        return pageResult;
+    }
+
+
 }

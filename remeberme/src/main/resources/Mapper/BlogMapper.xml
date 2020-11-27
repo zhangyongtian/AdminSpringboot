@@ -91,6 +91,25 @@
       order by ${orderByClause}
     </if>
   </select>
+
+<!--  对博客进行分页-->
+  <select id="getPageResultBlog" resultType="com.zhang.biyeseji.remeberme.pojo.Blog">
+        select * from blog
+  </select>
+
+<!--  根据id查blog的分类-->
+<select id="selectClassfiysByblogId" resultType="com.zhang.biyeseji.remeberme.pojo.Blogclassfiy" parameterType="java.lang.Integer">
+    select blogclassfiy.classfiyid as classfiyid,blogclassfiy.classfiyname as classfiyname from blog_classfiy
+    left join blogclassfiy on blog_classfiy.blogclassfiy=blogclassfiy.classfiyid
+     where blogid=#{blogid};
+</select>
+
+<!--  根据blog的id查询标签-->
+<select id="selectTagsByblogId" resultType="com.zhang.biyeseji.remeberme.pojo.Blogtags" parameterType="java.lang.Integer">
+    select blogtags.tagid as tagid,blogtags.tagname from blogtags
+     left join blog_tag on blog_tag.tagid=blogtags.tagid
+     where blog_tag.blogid=#{blogid};
+</select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

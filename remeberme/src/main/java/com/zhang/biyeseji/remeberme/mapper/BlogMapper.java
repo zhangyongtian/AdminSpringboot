@@ -1,8 +1,9 @@
 package com.zhang.biyeseji.remeberme.mapper;
 
-import com.zhang.biyeseji.remeberme.pojo.Blog;
-import com.zhang.biyeseji.remeberme.pojo.BlogExample;
+import com.zhang.biyeseji.remeberme.pojo.*;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface BlogMapper {
@@ -27,4 +28,10 @@ public interface BlogMapper {
     int updateByPrimaryKeySelective(Blog record);
 
     int updateByPrimaryKey(Blog record);
+
+    List<Blog> getPageResultBlog();
+
+    List<Blogclassfiy> selectClassfiysByblogId(Integer id);
+
+    List<Blogtags> selectTagsByblogId(Integer id);
 }

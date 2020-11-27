@@ -40,3 +40,10 @@ imgserve: http://10.10.10.18/zhang/
 logging:
   level:
     com.zhang.biyeseji.remeberme.mapper: trace
+
+#分页的配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

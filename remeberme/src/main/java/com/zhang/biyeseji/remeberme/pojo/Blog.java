@@ -1,6 +1,7 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class Blog {
     private Integer id;
@@ -26,6 +27,38 @@ public class Blog {
     private String content;
 
     private Boolean isfabu;
+
+    //这里是对应的用户
+    private Useryonghu useryonghu;
+
+    //这里是对应的分类
+    private List<Blogclassfiy> blogclassfiys;
+
+    private List<Blogtags> blogtags;
+
+    public Useryonghu getUseryonghu() {
+        return useryonghu;
+    }
+
+    public void setUseryonghu(Useryonghu useryonghu) {
+        this.useryonghu = useryonghu;
+    }
+
+    public List<Blogclassfiy> getBlogclassfiys() {
+        return blogclassfiys;
+    }
+
+    public void setBlogclassfiys(List<Blogclassfiy> blogclassfiys) {
+        this.blogclassfiys = blogclassfiys;
+    }
+
+    public List<Blogtags> getBlogtags() {
+        return blogtags;
+    }
+
+    public void setBlogtags(List<Blogtags> blogtags) {
+        this.blogtags = blogtags;
+    }
 
     public Integer getId() {
         return id;
