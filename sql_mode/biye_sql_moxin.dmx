@@ -1044,7 +1044,7 @@ Top=-786.00</GraphDesc>
 
 
 <DataModels_item1_item0_item11_item0>
-  <Count>3</Count>
+  <Count>4</Count>
 </DataModels_item1_item0_item11_item0>
 
 
@@ -1056,7 +1056,10 @@ Top=-786.00</GraphDesc>
   <ModifyDate>1899/12/30</ModifyDate>
   <OrderNo>1</OrderNo>
   <DataType>2</DataType>
-  <Nullable>1</Nullable>
+  <KeyFieldType>1</KeyFieldType>
+  <DefaultValue>{auto_increment}</DefaultValue>
+  <Nullable>0</Nullable>
+  <DataLength>11</DataLength>
   <EditorReadOnly>0</EditorReadOnly>
   <EditorEnabled>0</EditorEnabled>
 </DataModels_item1_item0_item11_item0_item1>
@@ -1089,6 +1092,22 @@ Top=-786.00</GraphDesc>
   <EditorReadOnly>0</EditorReadOnly>
   <EditorEnabled>0</EditorEnabled>
 </DataModels_item1_item0_item11_item0_item3>
+
+
+<DataModels_item1_item0_item11_item0_item4>
+  <CTVER>43543230</CTVER>
+  <ID>4</ID>
+  <Name>userid</Name>
+  <CreateDate>2020/11/29 18:29:10</CreateDate>
+  <ModifyDate>1899/12/30</ModifyDate>
+  <OrderNo>4</OrderNo>
+  <DisplayName>用户的id</DisplayName>
+  <DataType>2</DataType>
+  <Nullable>0</Nullable>
+  <DataLength>11</DataLength>
+  <EditorReadOnly>0</EditorReadOnly>
+  <EditorEnabled>0</EditorEnabled>
+</DataModels_item1_item0_item11_item0_item4>
 
 
 <DataModels_item1_item0_item12>
@@ -1478,6 +1497,8 @@ Top=-153.00</GraphDesc>
   <OrderNo>1</OrderNo>
   <DisplayName>二级评论的id</DisplayName>
   <DataType>2</DataType>
+  <KeyFieldType>1</KeyFieldType>
+  <DefaultValue>{auto_increment}</DefaultValue>
   <Nullable>0</Nullable>
   <EditorReadOnly>0</EditorReadOnly>
   <EditorEnabled>0</EditorEnabled>
@@ -1736,7 +1757,6 @@ Top=-426.00</GraphDesc>
   <OrderNo>2</OrderNo>
   <DisplayName>用户的id</DisplayName>
   <DataType>2</DataType>
-  <KeyFieldType>3</KeyFieldType>
   <RelateTable>useryonghu</RelateTable>
   <RelateField>userid</RelateField>
   <Nullable>1</Nullable>
@@ -1766,10 +1786,9 @@ Horz2=0</GraphDesc>
   <OrderNo>3</OrderNo>
   <DisplayName>博客的id</DisplayName>
   <DataType>2</DataType>
-  <KeyFieldType>3</KeyFieldType>
   <RelateTable>blog</RelateTable>
   <RelateField>blogid</RelateField>
-  <Nullable>1</Nullable>
+  <Nullable>0</Nullable>
   <EditorReadOnly>0</EditorReadOnly>
   <EditorEnabled>0</EditorEnabled>
   <GraphDesc>P1=588.50,-514.00

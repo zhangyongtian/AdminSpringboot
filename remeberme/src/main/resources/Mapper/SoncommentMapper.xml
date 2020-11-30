@@ -92,7 +92,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Soncomment">
+  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Soncomment" useGeneratedKeys="true" keyProperty="id">
     insert into soncomment (id, comment, createtime, 
       updatetime, parentid, zangcount, 
       likes, userid)

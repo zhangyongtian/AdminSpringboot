@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhang.biyeseji.remeberme.mapper.UserLikeBlogMapper">
+    <select id="selectUserLikesBlogByUserId" parameterType="java.lang.Integer" resultType="com.zhang.biyeseji.remeberme.pojo.UserLikeBlog">
+        select * from user_likes_blogs where userid=#{useid}
+    </select>
+
+    <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.UserLikeBlog">
+        insert into user_likes_blogs(userid,blogid) values (#{userid},#{blogid})
+    </insert>
+
+    <delete id="delete" parameterType="com.zhang.biyeseji.remeberme.pojo.UserLikeBlog">
+        delete from user_likes_blogs where userid=#{userid} and blogid=#{blogid}
+    </delete>
+</mapper>

@@ -40,6 +40,14 @@ public class BlogServiceImp implements BlogService{
         blog.setTitle(blogContent.getTitle());
         blog.setIntroduce(blogContent.getIntroduce());
         blog.setUserid(blogContent.getUserid());
+        //保存博客的时候对于用户的等级加一
+        Useryonghu useryonghu=useryonghuMapper.selectByPrimaryKey(blogContent.getUserid());
+        int userlevel=useryonghu.getUserlevel()+1;
+        UseryonghuExample example=new UseryonghuExample();
+        UseryonghuExample.Criteria criteria = example.createCriteria();
+        criteria.andIdEqualTo(blogContent.getUserid());
+        useryonghuMapper.updateByExample(useryonghu,example);
+
         blog.setCreatetime(new Date());
         blog.setUpdatetime(new Date());
         blog.setZangcount(0);
@@ -94,6 +102,24 @@ public class BlogServiceImp implements BlogService{
         pageResult.setTotalPages(page.getPages());
         pageResult.setTotalSize(page.getTotal());
         return pageResult;
+    }
+
+    @Override
+    public List<Blog> selectBlogByIds(UserLikesBlogId userLikesBlogId) {
+        BlogExample blogExample=new BlogExample();
+        BlogExample.Criteria criteria = blogExample.createCriteria();
+        criteria.andIdIn(userLikesBlogId.getUserlikesblogid());
+        List<Blog> blogList=blogMapper.selectByExample(blogExample);
+        blogList.forEach(blog -> {
+            Integer userid=blog.getUserid();
+            Useryonghu useryonghu=useryonghuMapper.selectByPrimaryKey(userid);
+            blog.setUseryonghu(useryonghu);
+            List<Blogclassfiy> classfiys=blogMapper.selectClassfiysByblogId(blog.getId());
+            blog.setBlogclassfiys(classfiys);
+            List<Blogtags> blogtags=blogMapper.selectTagsByblogId(blog.getId());
+            blog.setBlogtags(blogtags);
+        });
+        return blogList;
     }
 
 

@@ -103,7 +103,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Parnetcomment">
+  <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.Parnetcomment" useGeneratedKeys="true" keyProperty="id">
     insert into parnetcomment (id, parnetcommentid, comment, 
       createtime, zangcount, likes, 
       blogid, userid, updatetime
