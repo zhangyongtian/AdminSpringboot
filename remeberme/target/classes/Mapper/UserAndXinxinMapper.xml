@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhang.biyeseji.remeberme.mapper.UserAndXinxinMapper">
+    <select id="selectUserXinXinIdByUserId" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+         select xinxinid from user_guanzhu_user where userid=#{userid};
+    </select>
+
+    <insert id="insert" parameterType="com.zhang.biyeseji.remeberme.pojo.UserAndXinxin">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyColumn="id" keyProperty="id">
+            select last_insert_id();
+        </selectKey>
+        insert into user_guanzhu_user(userid,xinxinid) values (#{userid},#{xinxinid});
+    </insert>
+
+    <delete id="delete" parameterType="com.zhang.biyeseji.remeberme.pojo.UserAndXinxin">
+        delete from user_guanzhu_user where userid=#{userid} and xinxinid=#{xinxinid}
+    </delete>
+</mapper>
