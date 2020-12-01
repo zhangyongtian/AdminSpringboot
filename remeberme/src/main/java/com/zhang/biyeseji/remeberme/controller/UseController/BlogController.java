@@ -2,10 +2,7 @@ package com.zhang.biyeseji.remeberme.controller.UseController;
 
 import com.zhang.biyeseji.remeberme.mapper.SoncommentMapper;
 import com.zhang.biyeseji.remeberme.pojo.*;
-import com.zhang.biyeseji.remeberme.service.BlogClassfiyService;
-import com.zhang.biyeseji.remeberme.service.BlogService;
-import com.zhang.biyeseji.remeberme.service.ParnetcommentService;
-import com.zhang.biyeseji.remeberme.service.SoncommentService;
+import com.zhang.biyeseji.remeberme.service.*;
 import com.zhang.biyeseji.remeberme.util.JSONResult;
 import com.zhang.biyeseji.remeberme.util.PageRequest;
 import com.zhang.biyeseji.remeberme.util.PageResult;
@@ -20,6 +17,9 @@ import java.util.List;
 
 @RestController
 public class BlogController {
+    @Autowired
+    UseryonghuService useryonghuService;
+
     @Autowired
     SoncommentService soncommentService;
 
@@ -108,6 +108,20 @@ public class BlogController {
             return JSONResult.ok(useryonghuAndSonComments);
         }catch (Exception e){
             return JSONResult.errorMsg("显示子评论错误");
+        }
+
+    }
+
+
+    //    下面是查询子评论
+    @RequestMapping("getrecommenduser")
+    @CrossOrigin
+    public JSONResult getrecommenduser(){
+        try {
+            List<Useryonghu> useryonghus=useryonghuService.getRecommendUser();
+            return JSONResult.ok(useryonghus);
+        }catch (Exception e){
+            return JSONResult.errorMsg("获取推荐作者的信息失败");
         }
 
     }

@@ -122,5 +122,33 @@ public class BlogServiceImp implements BlogService{
         return blogList;
     }
 
+    @Override
+    public PageResult getBlogsByUserIdPageRequest(UserBlogPageRequest userBlogPageRequest) {
+        BlogExample blogExample=new BlogExample();
+        BlogExample.Criteria criteria = blogExample.createCriteria();
+        criteria.andUseridEqualTo(userBlogPageRequest.getUserid());
+        int pageNum=userBlogPageRequest.getPageNum();
+        int pageSize=userBlogPageRequest.getPageSize();
+        Page page=PageHelper.startPage(pageNum,pageSize);
+        List<Blog> blogList=blogMapper.selectByExample(blogExample);
+        blogList.forEach(blog -> {
+            Integer userid=blog.getUserid();
+            Useryonghu useryonghu=useryonghuMapper.selectByPrimaryKey(userid);
+            blog.setUseryonghu(useryonghu);
+            List<Blogclassfiy> classfiys=blogMapper.selectClassfiysByblogId(blog.getId());
+            blog.setBlogclassfiys(classfiys);
+            List<Blogtags> blogtags=blogMapper.selectTagsByblogId(blog.getId());
+            blog.setBlogtags(blogtags);
+
+        });
+        PageResult pageResult=new PageResult();
+        pageResult.setContent(blogList);
+        pageResult.setPageNum(pageNum);
+        pageResult.setPageSize(pageSize);
+        pageResult.setTotalPages(page.getPages());
+        pageResult.setTotalSize(page.getTotal());
+        return pageResult;
+    }
+
 
 }

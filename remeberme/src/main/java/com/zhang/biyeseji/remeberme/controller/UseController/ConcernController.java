@@ -7,6 +7,7 @@ import com.zhang.biyeseji.remeberme.service.UserAndXinxinServer;
 import com.zhang.biyeseji.remeberme.service.UserLikeBlogServer;
 import com.zhang.biyeseji.remeberme.service.UseryonghuService;
 import com.zhang.biyeseji.remeberme.util.JSONResult;
+import com.zhang.biyeseji.remeberme.util.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -129,6 +130,34 @@ public JSONResult getAllXinXinContent(@RequestBody Xinxinids xinxinids){
         return JSONResult.errorMsg("获取喜欢的博客id失败");
     }
 }
+
+    //根据用户的id查用户
+    @RequestMapping("getXinXinById")
+    @CrossOrigin
+    public JSONResult getXinXinById(@RequestBody Useryonghu useryonghu){
+
+        try {
+            Useryonghu useryonghu1=useryonghuService.selectUseryonghuById(useryonghu.getId());
+            return JSONResult.ok(useryonghu1);
+        }catch (Exception e){
+            return JSONResult.errorMsg("获取喜欢的博客id失败");
+        }
+    }
+
+
+
+    //根据用户的id查用户的所有的博客
+    @RequestMapping("getBlogsByUserId")
+    @CrossOrigin
+    public JSONResult getBlogsByUserId(@RequestBody UserBlogPageRequest userBlogPageRequest){
+
+        try {
+            PageResult pageResult=blogService.getBlogsByUserIdPageRequest(userBlogPageRequest);
+            return JSONResult.ok(pageResult);
+        }catch (Exception e){
+            return JSONResult.errorMsg("获取用户的blog失败");
+        }
+    }
 }
 
 

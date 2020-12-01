@@ -33,4 +33,6 @@ public interface UseryonghuMapper {
     Useryonghu selectUseryonghuByEmail(String useremail);
 
     void upateByUserEmail(String userEmail, String userpassword);
+
+    List<Useryonghu> selectAllUseryonghu();
 }

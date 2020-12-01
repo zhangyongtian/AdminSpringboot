@@ -10,4 +10,8 @@ import java.util.List;
 
 public interface UseryonghuService {
     List<Useryonghu> selectUseryonghusByIds(List<Integer> xinxinids);
+
+    Useryonghu selectUseryonghuById(Integer id);
+
+    List<Useryonghu> getRecommendUser();
 }

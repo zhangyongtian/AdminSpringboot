@@ -129,6 +129,11 @@ userimage,role.rolename as rolename from useryonghu-->
         left join role on user_role.roleid=role.roleid
         where useryonghu.useremail=#{useremail};
   </select>
+
+<!--  查询所有的用户-->
+  <select id="selectAllUseryonghu" resultType="com.zhang.biyeseji.remeberme.pojo.Useryonghu">
+        select * from useryonghu
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
