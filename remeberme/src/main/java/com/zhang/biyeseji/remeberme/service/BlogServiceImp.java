@@ -4,11 +4,16 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.zhang.biyeseji.remeberme.mapper.*;
 import com.zhang.biyeseji.remeberme.pojo.*;
+import com.zhang.biyeseji.remeberme.util.JSONResult;
 import com.zhang.biyeseji.remeberme.util.PageRequest;
+import com.zhang.biyeseji.remeberme.util.PageRequestHasId;
 import com.zhang.biyeseji.remeberme.util.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -28,6 +33,7 @@ public class BlogServiceImp implements BlogService{
 
     @Autowired
     UseryonghuMapper useryonghuMapper;
+
 
     @Override
     public void saveBlog(BlogContent blogContent) {
@@ -148,6 +154,89 @@ public class BlogServiceImp implements BlogService{
         pageResult.setTotalPages(page.getPages());
         pageResult.setTotalSize(page.getTotal());
         return pageResult;
+    }
+
+    @Override
+    public PageResult selectBlogByUserId(PageRequestHasId pageRequestHasId) {
+        BlogExample blogExample=new BlogExample();
+        BlogExample.Criteria criteria = blogExample.createCriteria();
+        criteria.andUseridEqualTo(pageRequestHasId.getUserid());
+        Page page=PageHelper.startPage(pageRequestHasId.getPageNum(),pageRequestHasId.getPageSize());
+        List<Blog> blogList=blogMapper.selectByExample(blogExample);
+        blogList.forEach(blog -> {
+            Integer userid=blog.getUserid();
+//            Useryonghu useryonghu=useryonghuMapper.selectByPrimaryKey(userid);
+//            blog.setUseryonghu(useryonghu);
+            List<Blogclassfiy> classfiys=blogMapper.selectClassfiysByblogId(blog.getId());
+            blog.setBlogclassfiys(classfiys);
+            List<Blogtags> blogtags=blogMapper.selectTagsByblogId(blog.getId());
+            blog.setBlogtags(blogtags);
+
+        });
+        PageResult pageResult=new PageResult();
+        pageResult.setContent(blogList);
+        pageResult.setTotalPages(page.getPages());
+        pageResult.setTotalSize(page.getTotal());
+        pageResult.setPageSize(pageRequestHasId.getPageSize());
+        pageResult.setPageNum(pageRequestHasId.getPageNum());
+        return pageResult;
+    }
+
+    @Override
+    public void deleteBlogById(Integer id) {
+
+        blogMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public Blog selectBlogById(Integer id) {
+        Blog blog=blogMapper.selectByPrimaryKey(id);
+        List<Blogclassfiy> classfiys=blogMapper.selectClassfiysByblogId(blog.getId());
+        blog.setBlogclassfiys(classfiys);
+        List<Blogtags> blogtags=blogMapper.selectTagsByblogId(blog.getId());
+        blog.setBlogtags(blogtags);
+        return blog;
+    }
+
+    @Override
+    public void updateBlog(BlogContent blogContent) {
+        //首先更新blog
+        BlogExample blogExample=new BlogExample();
+        BlogExample.Criteria criteria = blogExample.createCriteria();
+        criteria.andIdEqualTo(blogContent.getId());
+        Blog blog=new Blog();
+        blog.setIsfabu(blogContent.getIsfabu());
+        blog.setTitle(blogContent.getTitle());
+        blog.setHeadpic(blogContent.getHeadimg());
+        blog.setIntroduce(blogContent.getIntroduce());
+        blog.setContent(blogContent.getContent());
+        blog.setUpdatetime(new Date());
+        blogMapper.updateByExampleSelective(blog,blogExample);
+        //下面是更新tag还有classfiy是中间的表先删除后插入
+        blogAndTagMapper.deleteByBlogId(blogContent.getId());
+        List<Integer> tags=blogContent.getTag();
+        List<BlogAndTag> blogAndTagList=new ArrayList<>();
+        tags.forEach((tag)->{
+            BlogAndTag blogAndTag=new BlogAndTag();
+            blogAndTag.setBlogid(blogContent.getId());
+            blogAndTag.setTagid(tag);
+            blogAndTagList.add(blogAndTag);
+        });
+        blogAndTagMapper.saveBlogAndTagList(blogAndTagList);
+
+//        先删除classfiy
+        blogAndClassfiyMapper.deleteByBlogid(blogContent.getId());
+        List<Integer> classfiys=blogContent.getClassfiy();
+        List<BlogAndClassfiy> classfiys1=new ArrayList<>();
+        classfiys.forEach(classfiy->{
+            BlogAndClassfiy blogAndClassfiy=new BlogAndClassfiy();
+            blogAndClassfiy.setBlogid(blogContent.getId());
+            blogAndClassfiy.setBlogclassfiy(classfiy);
+            classfiys1.add(blogAndClassfiy);
+        });
+
+
+        blogAndClassfiyMapper.saveBlogAndClassfiyList(classfiys1);
     }
 
 

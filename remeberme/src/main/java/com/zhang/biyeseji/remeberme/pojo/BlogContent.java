@@ -4,6 +4,7 @@ import javax.xml.crypto.Data;
 import java.util.List;
 
 public class BlogContent {
+    private Integer id;
     private Integer userid;
     private String title;
     private String headimg;
@@ -13,6 +14,14 @@ public class BlogContent {
     private Boolean isfabu;
     private String introduce;
     private String content;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Integer getUserid() {
         return userid;

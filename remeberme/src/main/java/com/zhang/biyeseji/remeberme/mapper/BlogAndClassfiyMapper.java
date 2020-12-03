@@ -8,4 +8,6 @@ public interface BlogAndClassfiyMapper {
     public void saveBlogAndClassfiy(BlogAndClassfiy blogAndClassfiy);
 
     void saveBlogAndClassfiyList(List<BlogAndClassfiy> blogAndClassfiyList);
+
+    void deleteByBlogid(Integer id);
 }

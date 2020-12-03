@@ -16,5 +16,8 @@
             )
         </foreach>
     </insert>
+    <delete id="deleteByBlogId" parameterType="java.lang.Integer">
+        delete from blog_tag where blogid=#{id}
+    </delete>
 
 </mapper>

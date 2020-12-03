@@ -5,6 +5,7 @@ import com.zhang.biyeseji.remeberme.pojo.*;
 import com.zhang.biyeseji.remeberme.service.*;
 import com.zhang.biyeseji.remeberme.util.JSONResult;
 import com.zhang.biyeseji.remeberme.util.PageRequest;
+import com.zhang.biyeseji.remeberme.util.PageRequestHasId;
 import com.zhang.biyeseji.remeberme.util.PageResult;
 import org.apache.commons.codec.language.bm.Languages;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -124,5 +125,60 @@ public class BlogController {
             return JSONResult.errorMsg("获取推荐作者的信息失败");
         }
 
+    }
+
+
+    //    下面是根据用户的id获取blog
+    @RequestMapping("getblogpagebyuserid")
+    @CrossOrigin
+    public JSONResult getBlogPageByUserId(@RequestBody PageRequestHasId pageRequestHasId){
+        try {
+            PageResult pageResult=blogService.selectBlogByUserId(pageRequestHasId);
+            return JSONResult.ok(pageResult);
+        }catch (Exception e){
+            return JSONResult.errorMsg("获取推荐作者的信息失败");
+        }
+
+    }
+
+    //这里是删除blog用id
+
+    @RequestMapping("deleteblogById")
+    @CrossOrigin
+    public JSONResult deleteblogById(@RequestBody Blog blog) {
+        try {
+            blogService.deleteBlogById(blog.getId());
+            return JSONResult.ok();
+        } catch (Exception e) {
+            return JSONResult.errorMsg("删除blog失败");
+        }
+    }
+
+
+    //根据blog的id查询blog
+
+    @RequestMapping("getBlogbyId")
+    @CrossOrigin
+    public JSONResult getBlogbyId(@RequestBody Blog blog) {
+        try {
+            Blog blog1=blogService.selectBlogById(blog.getId());
+            return JSONResult.ok(blog1);
+        } catch (Exception e) {
+            return JSONResult.errorMsg("删除blog失败");
+        }
+    }
+
+
+    //修改blog
+
+    @RequestMapping("updateblog")
+    @CrossOrigin
+    public JSONResult updateblog(@RequestBody  BlogContent blogContent) {
+        try {
+            blogService.updateBlog(blogContent);
+            return JSONResult.ok();
+        } catch (Exception e) {
+            return JSONResult.errorMsg("删除blog失败");
+        }
     }
 }

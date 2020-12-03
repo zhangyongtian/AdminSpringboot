@@ -1,11 +1,15 @@
 package com.zhang.biyeseji.remeberme.service;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.zhang.biyeseji.remeberme.mapper.ParnetcommentMapper;
 import com.zhang.biyeseji.remeberme.mapper.UseryonghuMapper;
 import com.zhang.biyeseji.remeberme.pojo.Parnetcomment;
 import com.zhang.biyeseji.remeberme.pojo.ParnetcommentExample;
 import com.zhang.biyeseji.remeberme.pojo.Useryonghu;
 import com.zhang.biyeseji.remeberme.pojo.UseryonghuAndComment;
+import com.zhang.biyeseji.remeberme.util.PageRequestHasId;
+import com.zhang.biyeseji.remeberme.util.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -51,5 +55,28 @@ public class ParnetcommentServiceImp implements ParnetcommentService {
             useryonghuAndComments.add(useryonghuAndComment);
         });
         return useryonghuAndComments;
+    }
+
+    @Override
+    public PageResult selectParnetCommentByUserId(PageRequestHasId pageRequestHasId) {
+        ParnetcommentExample parnetcommentExample=new ParnetcommentExample();
+        ParnetcommentExample.Criteria criteria = parnetcommentExample.createCriteria();
+        criteria.andUseridEqualTo(pageRequestHasId.getUserid());
+        Page page= PageHelper.startPage(pageRequestHasId.getPageNum(),pageRequestHasId.getPageSize());
+        List<Parnetcomment> parnetcommentList=parnetcommentMapper.selectByExample(parnetcommentExample);
+        PageResult pageResult=new PageResult();
+        pageResult.setContent(parnetcommentList);
+        pageResult.setPageNum(pageRequestHasId.getPageNum());
+        pageResult.setPageSize(pageRequestHasId.getPageSize());
+        pageResult.setTotalPages(page.getPages());
+        pageResult.setTotalSize(page.getTotal());
+        return pageResult;
+    }
+
+//    这里删除的时候到时候清除所有的数据对于父评论的删除级联删除子评论
+//alter table soncomment add constraint FK_ID foreign key(parentid) REFERENCES parnetcomment(id) ON DELETE CASCADE
+    @Override
+    public void deleteParnetCommentById(Integer id) {
+        parnetcommentMapper.deleteByPrimaryKey(id);
     }
 }

@@ -8,4 +8,6 @@ public interface BlogAndTagMapper {
     public void saveBlogAndTag(BlogAndTag blogAndTag);
 
     void saveBlogAndTagList(List<BlogAndTag> blogAndTagList);
+
+    void deleteByBlogId(Integer id);
 }
