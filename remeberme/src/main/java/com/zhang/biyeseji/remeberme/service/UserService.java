@@ -10,4 +10,6 @@ public interface UserService {
     Useryonghu selectUseryonghuByEmail(String useremail);
 
     void updateUser(String userEmail, String userpassword);
+
+    void updateUserById(Useryonghu useryonghu);
 }

@@ -79,4 +79,18 @@ public class UserUpdateCroller {
             return JSONResult.errorMsg("验证码有问题,错误或者过期了");
         }
     }
+
+//    这里是根据id修改用户
+@RequestMapping("userrequest")
+@CrossOrigin
+public JSONResult userrequest(@RequestBody  Useryonghu useryonghu){
+        try{
+            userService.updateUserById(useryonghu);
+            return JSONResult.ok();
+        }catch (Exception e){
+            return JSONResult.errorMsg("修改用户失败");
+        }
+
+}
+
 }

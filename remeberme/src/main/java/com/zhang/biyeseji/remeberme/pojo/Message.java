@@ -12,6 +12,15 @@ public class Message {
     private Date updatetime;
 
     private Integer userid;
+    private Useryonghu useryonghu;
+
+    public Useryonghu getUseryonghu() {
+        return useryonghu;
+    }
+
+    public void setUseryonghu(Useryonghu useryonghu) {
+        this.useryonghu = useryonghu;
+    }
 
     public Integer getId() {
         return id;

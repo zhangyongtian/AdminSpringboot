@@ -148,6 +148,18 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+
+  <resultMap id="selectMessageAndUserPage" type="com.zhang.biyeseji.remeberme.pojo.Message">
+    <id column="id" property="id"></id>
+    <result column="userid" property="userid"></result>
+    <result column="createtime" property="createtime"></result>
+    <result column="updatetime" property="updatetime"></result>
+    <result column="message" property="message"></result>
+  </resultMap>
+<!--  查找所有-->
+  <select id="selectAllMessage" resultMap="selectMessageAndUserPage">
+    select * from message
+  </select>
   <update id="updateByExampleSelective" parameterType="map">
     update message
     <set>

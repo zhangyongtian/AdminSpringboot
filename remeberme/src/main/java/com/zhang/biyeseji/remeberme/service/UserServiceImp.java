@@ -4,6 +4,7 @@ import com.zhang.biyeseji.remeberme.mapper.UseryonghuMapper;
 import com.zhang.biyeseji.remeberme.pojo.UserAndRole;
 import com.zhang.biyeseji.remeberme.pojo.Useryonghu;
 import com.zhang.biyeseji.remeberme.pojo.UseryonghuExample;
+import org.omg.CORBA.UserException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
@@ -46,6 +47,14 @@ public class UserServiceImp implements UserService {
         UseryonghuExample useryonghuExample=new UseryonghuExample();
         UseryonghuExample.Criteria criteria = useryonghuExample.createCriteria();
         criteria.andUseremailEqualTo(userEmail);
+        useryonghuMapper.updateByExampleSelective(useryonghu,useryonghuExample);
+    }
+
+    @Override
+    public void updateUserById(Useryonghu useryonghu) {
+        UseryonghuExample useryonghuExample=new UseryonghuExample();
+        UseryonghuExample.Criteria criteria = useryonghuExample.createCriteria();
+        criteria.andIdEqualTo(useryonghu.getId());
         useryonghuMapper.updateByExampleSelective(useryonghu,useryonghuExample);
     }
 }
