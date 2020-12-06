@@ -12,4 +12,8 @@ import java.util.List;
 public interface  BlogTagsService {
 
     public List<Blogtags> selectTagsAll();
+
+    void insertBlogTags(Blogtags blogtags);
+
+    void deletetagById(Blogtags blogtags);
 }

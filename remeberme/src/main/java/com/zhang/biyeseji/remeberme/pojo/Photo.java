@@ -1,11 +1,8 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
-public class Erweima {
+public class Photo {
     private Integer id;
-
     private String imgurl;
-
-    private Boolean flag;
 
     public Integer getId() {
         return id;
@@ -20,14 +17,6 @@ public class Erweima {
     }
 
     public void setImgurl(String imgurl) {
-        this.imgurl = imgurl == null ? null : imgurl.trim();
-    }
-
-    public Boolean getFlag() {
-        return flag;
-    }
-
-    public void setFlag(Boolean flag) {
-        this.flag = flag;
+        this.imgurl = imgurl;
     }
 }

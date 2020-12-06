@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface BlogClassfiyService {
     public List<Blogclassfiy> selectClassfiyAll();
+
+    void saveBlogClassfiy(Blogclassfiy blogclassfiy);
+
+    void deleteBlogClassfiyById(Blogclassfiy blogclassfiy);
 }

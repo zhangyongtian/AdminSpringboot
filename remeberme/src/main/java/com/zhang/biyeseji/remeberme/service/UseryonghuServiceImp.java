@@ -5,7 +5,8 @@ import com.github.pagehelper.PageHelper;
 import com.zhang.biyeseji.remeberme.mapper.UseryonghuMapper;
 import com.zhang.biyeseji.remeberme.pojo.Useryonghu;
 import com.zhang.biyeseji.remeberme.pojo.UseryonghuExample;
-import org.apache.tomcat.jni.User;
+import com.zhang.biyeseji.remeberme.util.PageRequest;
+import com.zhang.biyeseji.remeberme.util.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,9 +32,15 @@ public class UseryonghuServiceImp implements UseryonghuService {
     }
 
     @Override
-    public List<Useryonghu> getRecommendUser() {
-        Page page= PageHelper.startPage(1,6);
+    public PageResult getRecommendUser(PageRequest pageRequest) {
+        Page page= PageHelper.startPage(pageRequest.getPageNum(),pageRequest.getPageSize());
         List<Useryonghu> useryonghus=useryonghuMapper.selectAllUseryonghu();
-        return useryonghus;
+        PageResult pageResult=new PageResult();
+        pageResult.setPageNum(pageRequest.getPageNum());
+        pageResult.setPageSize(pageRequest.getPageSize());
+        pageResult.setContent(useryonghus);
+        pageResult.setTotalPages(page.getPages());
+        pageResult.setTotalSize(page.getTotal());
+        return pageResult;
     }
 }

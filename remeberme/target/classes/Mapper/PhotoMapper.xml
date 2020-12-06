@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhang.biyeseji.remeberme.mapper.PhotoMapper">
+
+    <select id="selectPagePhoto" resultType="com.zhang.biyeseji.remeberme.pojo.Photo">
+        select * from photos
+    </select>
+    <select id="getPhotoById" resultType="com.zhang.biyeseji.remeberme.pojo.Photo" parameterType="java.lang.Integer">
+        select * from photos where id=#{id}
+    </select>
+
+    <update id="updatePhotoById" parameterType="com.zhang.biyeseji.remeberme.pojo.Photo">
+        update photos set imgurl=#{imgurl} where id=#{id}
+    </update>
+
+    <insert id="savephoto" parameterType="java.lang.String">
+        insert  into photos(imgurl) values (#{url})
+    </insert>
+    <delete id="deletePhotoById" parameterType="java.lang.Integer">
+        delete from  photos where id=#{id}
+    </delete>
+</mapper>

@@ -1,10 +1,8 @@
 package com.zhang.biyeseji.remeberme.service;
 
-import com.zhang.biyeseji.remeberme.mapper.UseryonghuMapper;
 import com.zhang.biyeseji.remeberme.pojo.Useryonghu;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import com.zhang.biyeseji.remeberme.util.PageRequest;
+import com.zhang.biyeseji.remeberme.util.PageResult;
 
 import java.util.List;
 
@@ -13,5 +11,5 @@ public interface UseryonghuService {
 
     Useryonghu selectUseryonghuById(Integer id);
 
-    List<Useryonghu> getRecommendUser();
+    PageResult getRecommendUser(PageRequest pageRequest);
 }

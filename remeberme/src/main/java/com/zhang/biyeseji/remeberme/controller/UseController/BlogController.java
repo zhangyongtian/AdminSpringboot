@@ -40,6 +40,35 @@ public class BlogController {
         return JSONResult.ok(blogclassfiyList);
     }
 
+
+
+    @RequestMapping("saveclassfiy")
+    @CrossOrigin
+    public JSONResult saveClassfiy(@RequestBody Blogclassfiy blogclassfiy){
+        try {
+            blogClassfiyService.saveBlogClassfiy(blogclassfiy);
+            return JSONResult.ok();
+        }catch (Exception e){
+            return JSONResult.errorMsg("保存失败");
+        }
+
+    }
+
+
+
+
+    @RequestMapping("deleteclassfiyById")
+    @CrossOrigin
+    public JSONResult deleteclassfiyById(@RequestBody Blogclassfiy blogclassfiy){
+        try {
+            blogClassfiyService.deleteBlogClassfiyById(blogclassfiy);
+            return JSONResult.ok();
+        }catch (Exception e){
+            return JSONResult.errorMsg("保存失败");
+        }
+
+    }
+
 //    这里是保存bolg的时候使用的
 
     @RequestMapping("saveBlog")
@@ -117,9 +146,9 @@ public class BlogController {
     //    下面是查询子评论
     @RequestMapping("getrecommenduser")
     @CrossOrigin
-    public JSONResult getrecommenduser(){
+    public JSONResult getrecommenduser(@RequestBody PageRequest pageRequest){
         try {
-            List<Useryonghu> useryonghus=useryonghuService.getRecommendUser();
+            PageResult useryonghus=useryonghuService.getRecommendUser(pageRequest);
             return JSONResult.ok(useryonghus);
         }catch (Exception e){
             return JSONResult.errorMsg("获取推荐作者的信息失败");

@@ -6,6 +6,7 @@ import com.zhang.biyeseji.remeberme.service.BlogTagsService;
 import com.zhang.biyeseji.remeberme.util.JSONResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +22,31 @@ public class BlogTagsController {
     public JSONResult getAllBlogTags(){
         List<Blogtags> blogtagsList=blogTagsService.selectTagsAll();
         return JSONResult.ok(blogtagsList);
+    }
+
+
+    @RequestMapping("savetag")
+    @CrossOrigin
+    public JSONResult savetag(@RequestBody Blogtags blogtags){
+        try {
+            blogTagsService.insertBlogTags(blogtags);
+            return JSONResult.ok();
+        }catch (Exception e){
+            return JSONResult.errorMsg("保存标签失败");
+        }
+
+    }
+
+
+    @RequestMapping("deletetagById")
+    @CrossOrigin
+    public JSONResult deletetagById(@RequestBody Blogtags blogtags){
+        try {
+            blogTagsService.deletetagById(blogtags);
+            return JSONResult.ok();
+        }catch (Exception e){
+            return JSONResult.errorMsg("保存标签失败");
+        }
+
     }
 }
