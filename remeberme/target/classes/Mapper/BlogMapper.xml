@@ -77,6 +77,13 @@
     id, blogid, zangcount, likes, headpic, title, introduce, userid, createtime, updatetime, 
     content, isfabu
   </sql>
+
+<!--  下面是获取所有的blog-->
+
+  <select id="selectAllBlog" resultType="com.zhang.biyeseji.remeberme.pojo.Blog">
+    select <include refid="Base_Column_List"></include> from blog
+  </select>
+
   <select id="selectByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogExample" resultMap="BaseResultMap">
     select
     <if test="distinct">

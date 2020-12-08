@@ -26,4 +26,6 @@ public interface BlogService {
     Blog selectBlogById(Integer id);
 
     void updateBlog(BlogContent blogContent);
+
+    PageResult selectBlogPage(PageRequest pageRequest);
 }

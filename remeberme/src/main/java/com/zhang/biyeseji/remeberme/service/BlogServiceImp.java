@@ -21,7 +21,8 @@ import java.util.List;
 
 @Service
 @Transactional
-public class BlogServiceImp implements BlogService{
+public class BlogServiceImp implements
+        BlogService{
     @Autowired
     BlogMapper blogMapper;
 
@@ -237,6 +238,25 @@ public class BlogServiceImp implements BlogService{
 
 
         blogAndClassfiyMapper.saveBlogAndClassfiyList(classfiys1);
+    }
+
+    @Override
+    public PageResult selectBlogPage(PageRequest pageRequest) {
+        Page page=PageHelper.startPage(pageRequest.getPageNum(),pageRequest.getPageSize());
+        List<Blog> blogList=blogMapper.selectAllBlog();
+        PageResult pageResult=new PageResult();
+        pageResult.setPageSize(pageRequest.getPageSize());
+        pageResult.setPageNum(pageRequest.getPageNum());
+//        下面就是根据所有的文章查用户
+        blogList.forEach(blog -> {
+            Integer userid=blog.getUserid();
+            Useryonghu useryonghu=useryonghuMapper.selectByPrimaryKey(userid);
+            blog.setUseryonghu(useryonghu);
+        });
+        pageResult.setContent(blogList);
+        pageResult.setTotalPages(page.getPages());
+        pageResult.setTotalSize(page.getTotal());
+        return pageResult;
     }
 
 

@@ -34,4 +34,6 @@ public interface BlogMapper {
     List<Blogclassfiy> selectClassfiysByblogId(Integer id);
 
     List<Blogtags> selectTagsByblogId(Integer id);
+
+    List<Blog> selectAllBlog();
 }

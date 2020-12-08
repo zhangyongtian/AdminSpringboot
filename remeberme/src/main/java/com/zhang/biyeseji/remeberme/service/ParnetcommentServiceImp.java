@@ -8,6 +8,7 @@ import com.zhang.biyeseji.remeberme.pojo.Parnetcomment;
 import com.zhang.biyeseji.remeberme.pojo.ParnetcommentExample;
 import com.zhang.biyeseji.remeberme.pojo.Useryonghu;
 import com.zhang.biyeseji.remeberme.pojo.UseryonghuAndComment;
+import com.zhang.biyeseji.remeberme.util.PageRequest;
 import com.zhang.biyeseji.remeberme.util.PageRequestHasId;
 import com.zhang.biyeseji.remeberme.util.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,5 +79,18 @@ public class ParnetcommentServiceImp implements ParnetcommentService {
     @Override
     public void deleteParnetCommentById(Integer id) {
         parnetcommentMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public PageResult selectPageForAllCommend(PageRequest pageRequest) {
+        Page page=PageHelper.startPage(pageRequest.getPageNum(),pageRequest.getPageSize());
+        List<Parnetcomment> parnetcommentList=parnetcommentMapper.selectAllCommend();
+        PageResult pageResult=new PageResult();
+        pageResult.setTotalSize(page.getTotal());
+        pageResult.setTotalPages(page.getPages());
+        pageResult.setContent(parnetcommentList);
+        pageResult.setPageNum(pageRequest.getPageNum());
+        pageResult.setPageSize(pageRequest.getPageSize());
+        return pageResult;
     }
 }

@@ -87,6 +87,10 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="selectAllCommend" resultType="com.zhang.biyeseji.remeberme.pojo.Parnetcomment">
+    select * from parnetcomment
+  </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

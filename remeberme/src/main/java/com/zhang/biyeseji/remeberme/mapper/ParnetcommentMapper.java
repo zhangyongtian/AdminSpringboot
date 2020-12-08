@@ -27,4 +27,6 @@ public interface ParnetcommentMapper {
     int updateByPrimaryKeySelective(Parnetcomment record);
 
     int updateByPrimaryKey(Parnetcomment record);
+
+    List<Parnetcomment> selectAllCommend();
 }
