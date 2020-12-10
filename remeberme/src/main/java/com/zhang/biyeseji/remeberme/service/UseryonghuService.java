@@ -12,4 +12,10 @@ public interface UseryonghuService {
     Useryonghu selectUseryonghuById(Integer id);
 
     PageResult getRecommendUser(PageRequest pageRequest);
+
+    Useryonghu selectUseryonghuAndRoleById(Integer id);
+
+    void deleteUseryonghuById(Integer id);
+
+    void updataUseryonghuRoles(Useryonghu useryonghu);
 }

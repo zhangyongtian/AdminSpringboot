@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhang.biyeseji.remeberme.mapper.UserAndRoleMapper">
+    <cache-ref namespace="com.zhang.biyeseji.remeberme.mapper.UseryonghuMapper"/>
   <insert id="insertUserAndRole" parameterType="com.zhang.biyeseji.remeberme.pojo.UserAndRole">
         insert into user_role(userid,roleid) values(#{userid},#{roleid})
   </insert>
+
+    <insert id="insertRoles" parameterType="com.zhang.biyeseji.remeberme.pojo.Useryonghu">
+        insert  into user_role(userid,roleid) values
+        <foreach collection="roles" item="item" index="index" separator=",">
+            (#{id},#{item.roleid})
+        </foreach>
+    </insert>
+
+    <delete id="deleteUseryonghuRoleByUserId" parameterType="java.lang.Integer">
+        delete from  user_role where userid=#{id}
+    </delete>
 </mapper>

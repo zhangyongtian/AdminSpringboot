@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhang.biyeseji.remeberme.mapper.RoleMapper">
+  <cache-ref namespace="com.zhang.biyeseji.remeberme.mapper.UseryonghuMapper"/>
   <resultMap id="BaseResultMap" type="com.zhang.biyeseji.remeberme.pojo.Role">
     <result column="roleid" jdbcType="INTEGER" property="roleid" />
     <result column="rolename" jdbcType="VARCHAR" property="rolename" />
@@ -79,6 +80,10 @@
     <if test="orderByClause != null">
       order by ${orderByClause}
     </if>
+  </select>
+<!--  下面是获取所有的角色-->
+  <select id="selectAllRole" resultType="com.zhang.biyeseji.remeberme.pojo.Role">
+    select  * from role
   </select>
   <delete id="deleteByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.RoleExample">
     delete from role

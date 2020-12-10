@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhang.biyeseji.remeberme.mapper.UseryonghuMapper">
+  <cache type="com.zhang.biyeseji.remeberme.config.RedisCache"></cache>
   <resultMap id="BaseResultMap" type="com.zhang.biyeseji.remeberme.pojo.Useryonghu">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="userid" jdbcType="INTEGER" property="userid" />
@@ -128,6 +129,21 @@ userimage,role.rolename as rolename from useryonghu-->
         left join user_role on user_role.userid=useryonghu.id
         left join role on user_role.roleid=role.roleid
         where useryonghu.useremail=#{useremail};
+  </select>
+
+  <select id="selectUseryonghuAndRoleById" parameterType="java.lang.Integer" resultMap="UseryonghuByname">
+    select useryonghu.updatetime as userupdatetime, useryonghu.createtime as usercreatetime , useryonghu.userid as uid,useryonghu.salt as salt, role.roleid as roleid , useryonghu.useremail as useremail,useryonghu.id as userid ,useryonghu.username as username,useryonghu.userpassword as userpassword,
+        useryonghu.commentcount as usercommentcount,useryonghu.userlevel as userlevel,useryonghu.userimage as userimage,role.rolename as rolename from useryonghu
+        left join user_role on user_role.userid=useryonghu.id
+        left join role on user_role.roleid=role.roleid
+        where useryonghu.id=#{id}
+  </select>
+
+  <select id="selectAllUseryonghuAndRole" resultMap="UseryonghuByname">
+    select useryonghu.updatetime as userupdatetime, useryonghu.createtime as usercreatetime , useryonghu.userid as uid,useryonghu.salt as salt, role.roleid as roleid , useryonghu.useremail as useremail,useryonghu.id as userid ,useryonghu.username as username,useryonghu.userpassword as userpassword,
+        useryonghu.commentcount as usercommentcount,useryonghu.userlevel as userlevel,useryonghu.userimage as userimage,role.rolename as rolename from useryonghu
+        left join user_role on user_role.userid=useryonghu.id
+        left join role on user_role.roleid=role.roleid
   </select>
 
 <!--  查询所有的用户-->

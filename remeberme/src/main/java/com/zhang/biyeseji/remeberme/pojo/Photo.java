@@ -1,6 +1,8 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
-public class Photo {
+import java.io.Serializable;
+
+public class Photo  implements Serializable {
     private Integer id;
     private String imgurl;
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhang.biyeseji.remeberme.mapper.UserorginMapper">
+  <cache type="com.zhang.biyeseji.remeberme.config.RedisCache"></cache>
   <resultMap id="BaseResultMap" type="com.zhang.biyeseji.remeberme.pojo.Userorgin">
     <result column="userorginid" jdbcType="INTEGER" property="userorginid" />
     <result column="userorgincount" jdbcType="INTEGER" property="userorgincount" />

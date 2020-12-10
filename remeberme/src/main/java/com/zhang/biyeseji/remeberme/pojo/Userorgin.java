@@ -1,6 +1,8 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
-public class Userorgin {
+import java.io.Serializable;
+
+public class Userorgin  implements Serializable {
     private Integer userorginid;
 
     private Integer userorgincount;

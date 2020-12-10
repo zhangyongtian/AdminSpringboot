@@ -2,6 +2,7 @@ package com.zhang.biyeseji.remeberme.service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.zhang.biyeseji.remeberme.mapper.UserAndRoleMapper;
 import com.zhang.biyeseji.remeberme.mapper.UseryonghuMapper;
 import com.zhang.biyeseji.remeberme.pojo.Useryonghu;
 import com.zhang.biyeseji.remeberme.pojo.UseryonghuExample;
@@ -18,6 +19,9 @@ public class UseryonghuServiceImp implements UseryonghuService {
 
     @Autowired
     UseryonghuMapper useryonghuMapper;
+
+    @Autowired
+    UserAndRoleMapper userAndRoleMapper;
     @Override
     public List<Useryonghu> selectUseryonghusByIds(List<Integer> xinxinids) {
         UseryonghuExample useryonghuExample=new UseryonghuExample();
@@ -42,5 +46,23 @@ public class UseryonghuServiceImp implements UseryonghuService {
         pageResult.setTotalPages(page.getPages());
         pageResult.setTotalSize(page.getTotal());
         return pageResult;
+    }
+
+    @Override
+    public Useryonghu selectUseryonghuAndRoleById(Integer id) {
+        return useryonghuMapper.selectUseryonghuAndRoleById(id);
+    }
+
+    @Override
+    public void deleteUseryonghuById(Integer id) {
+        useryonghuMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public void updataUseryonghuRoles(Useryonghu useryonghu) {
+        //先删除之前的角色对应的中间表的信息,然后在添加信息
+        userAndRoleMapper.deleteUseryonghuRoleByUserId(useryonghu.getId());
+
+        userAndRoleMapper.insertRoles(useryonghu);
     }
 }

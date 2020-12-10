@@ -1,6 +1,8 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
-public class Blogclassfiy {
+import java.io.Serializable;
+
+public class Blogclassfiy implements Serializable {
     private Integer classfiyid;
 
     private String classfiyname;

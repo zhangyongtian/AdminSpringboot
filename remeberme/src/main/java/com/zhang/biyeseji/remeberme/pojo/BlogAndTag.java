@@ -1,6 +1,8 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
-public class BlogAndTag {
+import java.io.Serializable;
+
+public class BlogAndTag implements Serializable {
     private Integer id;
     private Integer blogid;
     private Integer tagid;

@@ -1,6 +1,8 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
-public class Perms {
+import java.io.Serializable;
+
+public class Perms  implements Serializable {
     private Integer permsid;
 
     private String permsname;

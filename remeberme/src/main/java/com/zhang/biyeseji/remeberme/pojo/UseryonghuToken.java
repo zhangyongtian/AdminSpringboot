@@ -1,6 +1,8 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
-public class UseryonghuToken {
+import java.io.Serializable;
+
+public class UseryonghuToken  implements Serializable {
     private Useryonghu useryonghu;
     private String token;
 

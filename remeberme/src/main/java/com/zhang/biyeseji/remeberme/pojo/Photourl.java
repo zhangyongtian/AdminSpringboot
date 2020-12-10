@@ -1,6 +1,8 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
-public class Photourl {
+import java.io.Serializable;
+
+public class Photourl  implements Serializable {
     private String photosurl;
 
     public String getPhotosurl() {

@@ -210,4 +210,15 @@ public class BlogController {
             return JSONResult.errorMsg("删除blog失败");
         }
     }
+
+    @RequestMapping("getBlogByIdAndUser")
+    @CrossOrigin
+    public JSONResult getBlogByIdAndUser(@RequestBody Blog blog) {
+        try {
+            Blog blog1=blogService.getBlogByIdAndUser(blog.getId());
+            return JSONResult.ok(blog1);
+        } catch (Exception e) {
+            return JSONResult.errorMsg("获取blog失败");
+        }
+    }
 }

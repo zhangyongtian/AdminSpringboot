@@ -1,6 +1,8 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
-public class UserLikeBlog {
+import java.io.Serializable;
+
+public class UserLikeBlog implements Serializable {
     private Integer id;
     private Integer userid;
     private Integer blogid;

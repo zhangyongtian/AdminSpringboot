@@ -1,9 +1,10 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class Useryonghu {
+public class Useryonghu  implements Serializable {
     private Integer id;
 
     private Integer userid;

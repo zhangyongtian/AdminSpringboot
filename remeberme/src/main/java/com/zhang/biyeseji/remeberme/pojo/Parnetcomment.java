@@ -1,8 +1,9 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Parnetcomment {
+public class Parnetcomment  implements Serializable {
     private Integer id;
 
     private Integer parnetcommentid;

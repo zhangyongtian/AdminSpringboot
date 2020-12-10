@@ -1,6 +1,8 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
-public class UserAndXinxin {
+import java.io.Serializable;
+
+public class UserAndXinxin  implements Serializable {
     private Integer id;
     private Integer userid;
     private Integer xinxinid;

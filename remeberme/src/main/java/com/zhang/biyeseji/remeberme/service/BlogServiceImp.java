@@ -21,8 +21,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class BlogServiceImp implements
-        BlogService{
+public class BlogServiceImp implements BlogService{
     @Autowired
     BlogMapper blogMapper;
 
@@ -257,6 +256,19 @@ public class BlogServiceImp implements
         pageResult.setTotalPages(page.getPages());
         pageResult.setTotalSize(page.getTotal());
         return pageResult;
+    }
+
+    @Override
+    public Blog getBlogByIdAndUser(Integer id) {
+        Blog blog=blogMapper.selectByPrimaryKey(id);
+        Integer userid=blog.getUserid();
+        Useryonghu useryonghu=useryonghuMapper.selectByPrimaryKey(userid);
+        blog.setUseryonghu(useryonghu);
+        List<Blogclassfiy> classfiys=blogMapper.selectClassfiysByblogId(blog.getId());
+        blog.setBlogclassfiys(classfiys);
+        List<Blogtags> blogtags=blogMapper.selectTagsByblogId(blog.getId());
+        blog.setBlogtags(blogtags);
+        return blog;
     }
 
 

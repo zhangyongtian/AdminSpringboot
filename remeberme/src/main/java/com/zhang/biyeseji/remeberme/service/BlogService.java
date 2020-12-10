@@ -28,4 +28,6 @@ public interface BlogService {
     void updateBlog(BlogContent blogContent);
 
     PageResult selectBlogPage(PageRequest pageRequest);
+
+    Blog getBlogByIdAndUser(Integer id);
 }

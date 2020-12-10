@@ -1,6 +1,8 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
-public class UserAndRole {
+import java.io.Serializable;
+
+public class UserAndRole  implements Serializable {
     private Integer userid;
     private Integer roleid;
 

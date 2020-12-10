@@ -1,6 +1,8 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
-public class UseryonghuAndComment {
+import java.io.Serializable;
+
+public class UseryonghuAndComment  implements Serializable {
     private Useryonghu useryonghu;
     private Parnetcomment parnetcomment;
 

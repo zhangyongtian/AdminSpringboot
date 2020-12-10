@@ -1,9 +1,10 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PermsExample {
+public class PermsExample  implements Serializable {
     protected String orderByClause;
 
     protected boolean distinct;

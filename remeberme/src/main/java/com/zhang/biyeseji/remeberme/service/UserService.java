@@ -1,6 +1,8 @@
 package com.zhang.biyeseji.remeberme.service;
 
 import com.zhang.biyeseji.remeberme.pojo.Useryonghu;
+import com.zhang.biyeseji.remeberme.util.PageRequest;
+import com.zhang.biyeseji.remeberme.util.PageResult;
 
 public interface UserService {
     public void insertUseryonghu(Useryonghu useryonghu);
@@ -12,4 +14,6 @@ public interface UserService {
     void updateUser(String userEmail, String userpassword);
 
     void updateUserById(Useryonghu useryonghu);
+
+    PageResult selectAllUserAndRole(PageRequest pageRequest);
 }

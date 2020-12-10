@@ -1,6 +1,8 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
-public class UserId {
+import java.io.Serializable;
+
+public class UserId  implements Serializable {
     private Integer userid;
 
     public Integer getUserid() {

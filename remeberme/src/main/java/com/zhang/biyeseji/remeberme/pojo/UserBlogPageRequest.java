@@ -1,6 +1,8 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
-public class UserBlogPageRequest {
+import java.io.Serializable;
+
+public class UserBlogPageRequest  implements Serializable {
     private Integer pageNum;
     private Integer pageSize;
 //    这里就是useryonghu的自增id

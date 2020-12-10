@@ -1,6 +1,8 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
-public class UserRegister {
+import java.io.Serializable;
+
+public class UserRegister  implements Serializable {
     private String username;
     private String userpassword;
     private String useremail;

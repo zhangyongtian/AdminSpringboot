@@ -35,4 +35,8 @@ public interface UseryonghuMapper {
     void upateByUserEmail(String userEmail, String userpassword);
 
     List<Useryonghu> selectAllUseryonghu();
+
+    List<Useryonghu> selectAllUseryonghuAndRole();
+
+    Useryonghu selectUseryonghuAndRoleById(Integer id);
 }

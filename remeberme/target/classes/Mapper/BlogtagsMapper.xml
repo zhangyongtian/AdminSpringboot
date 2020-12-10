@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhang.biyeseji.remeberme.mapper.BlogtagsMapper">
+  <cache-ref namespace="com.zhang.biyeseji.remeberme.mapper.UseryonghuMapper"/>
   <resultMap id="BaseResultMap" type="com.zhang.biyeseji.remeberme.pojo.Blogtags">
     <result column="tagid" jdbcType="INTEGER" property="tagid" />
     <result column="tagname" jdbcType="VARCHAR" property="tagname" />

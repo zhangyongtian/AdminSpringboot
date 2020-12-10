@@ -1,9 +1,10 @@
 package com.zhang.biyeseji.remeberme.pojo;
 
 import javax.xml.crypto.Data;
+import java.io.Serializable;
 import java.util.List;
 
-public class BlogContent {
+public class BlogContent implements Serializable {
     private Integer id;
     private Integer userid;
     private String title;
