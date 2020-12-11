@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.zhang.biyeseji.remeberme.pojo.Blogtags;
 import com.zhang.biyeseji.remeberme.service.BlogTagsService;
 import com.zhang.biyeseji.remeberme.util.JSONResult;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,7 +26,7 @@ public class BlogTagsController {
         return JSONResult.ok(blogtagsList);
     }
 
-
+    @RequiresRoles(value = {"superadmin","admin"},logical= Logical.OR)
     @RequestMapping("savetag")
     @CrossOrigin
     public JSONResult savetag(@RequestBody Blogtags blogtags){
@@ -37,7 +39,7 @@ public class BlogTagsController {
 
     }
 
-
+    @RequiresRoles(value = {"superadmin","admin"},logical= Logical.OR)
     @RequestMapping("deletetagById")
     @CrossOrigin
     public JSONResult deletetagById(@RequestBody Blogtags blogtags){

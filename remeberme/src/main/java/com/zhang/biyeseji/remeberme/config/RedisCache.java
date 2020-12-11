@@ -40,17 +40,10 @@ public class RedisCache implements Cache {
 
     @Override
     public void clear() {
-        System.out.println("================================================================");
-        System.out.println("================================================================");
-        System.out.println("================================================================");
-        System.out.println("我是thisid");
-        System.out.println(this.id);
         RedisTemplate redisTemplate= (RedisTemplate) ShiroGetApplication.getmYapplicationContext().getBean("redisTemplate");
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setHashKeySerializer(new StringRedisSerializer());
         redisTemplate.delete(this.id);
-        System.out.println("我是thisid");
-        System.out.println(this.id);
     }
 
     @Override

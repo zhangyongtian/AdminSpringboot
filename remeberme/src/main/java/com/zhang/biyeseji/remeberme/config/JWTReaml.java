@@ -26,7 +26,10 @@ public class JWTReaml extends AuthorizingRealm {
         String roles=decodedJWT.getClaim("roles").asString();
         String[] role=roles.split(",");
         SimpleAuthorizationInfo simpleAuthorizationInfo=new SimpleAuthorizationInfo();
-        return null;
+        for(int i=0;i<role.length;i++){
+            simpleAuthorizationInfo.addRole(role[i]);
+        }
+        return simpleAuthorizationInfo;
     }
 
     @Override

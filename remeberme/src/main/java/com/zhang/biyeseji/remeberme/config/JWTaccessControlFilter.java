@@ -19,7 +19,6 @@ public class JWTaccessControlFilter extends AccessControlFilter {
     protected boolean isAccessAllowed(ServletRequest servletRequest, ServletResponse servletResponse, Object o) throws Exception {
         Subject subject = SecurityUtils.getSubject();
         //当主体对象不为空且已经获得认证时允许访问
-        System.out.println("开始验证的时候"+subject.isAuthenticated());
         if (null != subject && subject.isAuthenticated()){
             return true;
         }
@@ -32,16 +31,18 @@ public class JWTaccessControlFilter extends AccessControlFilter {
         String jwtToken= httpServletRequest.getHeader("token");
         //客户端没有携带token
         if (StringUtils.isEmpty(jwtToken)) {
-            System.out.println("请求头没有token");
             return true;
         }
-        System.out.println("拒接访问");
         JWTService jwtService=new JWTServiceImp();
         Subject subject = SecurityUtils.getSubject();
         //进行认证
         JWTauthenticationToken jwTauthenticationToken=new JWTauthenticationToken(jwtToken);
-        subject.login(jwTauthenticationToken);
-        System.out.println("认证的结果是"+subject.isAuthenticated());
+        try {
+            subject.login(jwTauthenticationToken);
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
         return true;
     }
 }

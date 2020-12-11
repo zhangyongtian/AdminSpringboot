@@ -46,6 +46,7 @@ public class ShiroConfig {
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(map);
         shiroFilterFactoryBean.setLoginUrl("/rememberme/userSinIn");
+
         return shiroFilterFactoryBean;
     }
     @Bean

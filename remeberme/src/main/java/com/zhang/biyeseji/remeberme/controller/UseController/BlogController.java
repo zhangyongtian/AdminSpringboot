@@ -8,6 +8,8 @@ import com.zhang.biyeseji.remeberme.util.PageRequest;
 import com.zhang.biyeseji.remeberme.util.PageRequestHasId;
 import com.zhang.biyeseji.remeberme.util.PageResult;
 import org.apache.commons.codec.language.bm.Languages;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,7 +43,7 @@ public class BlogController {
     }
 
 
-
+    @RequiresRoles(value = {"superadmin","admin"},logical= Logical.OR)
     @RequestMapping("saveclassfiy")
     @CrossOrigin
     public JSONResult saveClassfiy(@RequestBody Blogclassfiy blogclassfiy){
@@ -55,8 +57,8 @@ public class BlogController {
     }
 
 
-
-
+//这里是管理元才可以了
+    @RequiresRoles(value = {"superadmin","admin"},logical= Logical.OR)
     @RequestMapping("deleteclassfiyById")
     @CrossOrigin
     public JSONResult deleteclassfiyById(@RequestBody Blogclassfiy blogclassfiy){

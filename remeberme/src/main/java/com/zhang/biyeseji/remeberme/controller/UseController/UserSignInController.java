@@ -143,7 +143,7 @@ public class UserSignInController {
             tokenChaimMap.put("username",useryonghu1.getUsername());
             StringBuilder roles=new StringBuilder();
             useryonghu1.getRoles().forEach(role -> {
-                roles.append(role.getRolename()+" "+role.getRoleid()+",");
+                roles.append(role.getRolename()+",");
             });
             String role=roles.toString();
             tokenChaimMap.put("roles",role);

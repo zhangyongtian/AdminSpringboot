@@ -6,6 +6,8 @@ import com.zhang.biyeseji.remeberme.service.PhotoService;
 import com.zhang.biyeseji.remeberme.util.JSONResult;
 import com.zhang.biyeseji.remeberme.util.PageRequest;
 import com.zhang.biyeseji.remeberme.util.PageResult;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +23,7 @@ public class AdminPhotoController {
     @Autowired
     PhotoService photoService;
     //这里就是保存照片墙图片的地方
+    @RequiresRoles(value = {"superadmin","admin"},logical= Logical.OR)
     @RequestMapping("savephoto")
     @CrossOrigin
     public JSONResult savePhotos(@RequestBody Photourl photourl){
@@ -35,6 +38,7 @@ public class AdminPhotoController {
 
 
     //这里是查询图片的地方
+    @RequiresRoles(value = {"superadmin","admin"},logical= Logical.OR)
     @RequestMapping("selectPagePhoto")
     @CrossOrigin
     public JSONResult selectPagePhoto(@RequestBody  PageRequest pageRequest){
@@ -47,6 +51,7 @@ public class AdminPhotoController {
     }
 
     //这里是查询图片的地方
+    @RequiresRoles(value = {"superadmin","admin"},logical= Logical.OR)
     @RequestMapping("deletePhotoById")
     @CrossOrigin
     public JSONResult deletePhotoById(@RequestBody Photo photo){
@@ -60,6 +65,7 @@ public class AdminPhotoController {
 
 
     //获得的照片用id
+    @RequiresRoles(value = {"superadmin","admin"},logical= Logical.OR)
     @RequestMapping("getPhotoById")
     @CrossOrigin
     public JSONResult dgetPhotoById(@RequestBody Photo photo){
@@ -73,6 +79,7 @@ public class AdminPhotoController {
 
 
     //根据id修改图片
+    @RequiresRoles(value = {"superadmin","admin"},logical= Logical.OR)
     @RequestMapping("updatePhotoById")
     @CrossOrigin
     public JSONResult updatePhotoById(@RequestBody Photo photo){
