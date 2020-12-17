@@ -24,6 +24,12 @@
 			<artifactId>spring-boot-starter-activemq</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.elasticsearch.client</groupId>
+			<artifactId>elasticsearch-rest-high-level-client</artifactId>
+			<version>7.4.2</version>
+		</dependency>
+
 <!--		用它做日志的记录-->
 		<dependency>
 
@@ -117,6 +123,17 @@
 			<groupId>com.auth0</groupId>
 			<artifactId>java-jwt</artifactId>
 			<version>3.4.0</version>
+		</dependency>
+<!--		使用springcloud的oss-->
+		<dependency>
+
+			<groupId>com.alibaba.cloud</groupId>
+
+
+			<artifactId>spring-cloud-starter-alicloud-oss</artifactId>
+
+			<version>2.1.0.RELEASE</version>
+
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>

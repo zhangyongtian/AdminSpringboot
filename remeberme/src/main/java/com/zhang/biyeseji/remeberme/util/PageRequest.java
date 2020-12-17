@@ -10,6 +10,26 @@ public class PageRequest {
      */
     private int pageSize;
 
+    private Integer nowclassfiy;
+
+    private Integer nowtag;
+
+    public void setNowclassfiy(Integer nowclassfiy) {
+        this.nowclassfiy = nowclassfiy;
+    }
+
+    public void setNowtag(Integer nowtag) {
+        this.nowtag = nowtag;
+    }
+
+    public Integer getNowclassfiy() {
+        return nowclassfiy;
+    }
+
+    public Integer getNowtag() {
+        return nowtag;
+    }
+
     public int getPageNum() {
         return pageNum;
     }

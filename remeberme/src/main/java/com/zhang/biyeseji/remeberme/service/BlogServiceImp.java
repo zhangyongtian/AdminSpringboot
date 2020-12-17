@@ -87,9 +87,13 @@ public class BlogServiceImp implements BlogService{
 
     @Override
     public PageResult getPageResultBlog(PageRequest pageRequest) {
+        //        判断分类的id还有tagid
+
+
         int startPage=pageRequest.getPageNum();
         int pageNum=pageRequest.getPageSize();
         Page page=PageHelper.startPage(startPage,pageNum);
+        BlogExample blogExample=new BlogExample();
         List<Blog> bloglist = blogMapper.getPageResultBlog();
         bloglist.forEach(blog -> {
             Integer userid=blog.getUserid();

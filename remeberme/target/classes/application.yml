@@ -5,7 +5,7 @@ server:
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost/test
+    url: jdbc:mysql://49.235.236.99:3307/remembermeblog
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
@@ -18,7 +18,14 @@ spring:
   redis:
     port: 6379
     database: 0
-    host: 10.10.10.18
+    host: 49.235.236.99
+  cloud:
+    alicloud:
+      oss:
+        endpoint: oss-cn-huhehaote.aliyuncs.com
+      access-key: LTAI4FxvyUvLFw3bU1cYfqLz
+      secret-key: rkFexRCeJaG7nJ1koMRk4D5ZHrk3nn
+      bucket: huabei5zhanh
 mybatis:
   mapper-locations: classpath:/Mapper/*.xml
   log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
@@ -47,3 +54,10 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
+#    oss:
+#      endpoint: oss-cn-huhehaote.aliyuncs.com
+#    access-key: LTAI4FxvyUvLFw3bU1cYfqLz
+#    secret-key: rkFexRCeJaG7nJ1koMRk4D5ZHrk3nn
+#    bucket: huabei5zhanh
+
+#下面是oss

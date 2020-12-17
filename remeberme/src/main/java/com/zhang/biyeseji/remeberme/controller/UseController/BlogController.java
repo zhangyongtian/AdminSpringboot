@@ -84,7 +84,7 @@ public class BlogController {
     }
 
 //    接收当前的页数还有每一页的个数进行分页
-
+//这里根据条件查询
     @RequestMapping("getBlogPageHelper")
     @CrossOrigin
     public PageResult getBlogPageHelper(@RequestBody PageRequest pageRequest){
