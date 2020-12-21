@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class BlogController {
@@ -34,6 +36,9 @@ public class BlogController {
 
     @Autowired
     BlogService blogService;
+
+    @Autowired
+    EsClientService esClientService;
 
     @RequestMapping("getAllBlogClassfiy")
     @CrossOrigin
@@ -223,4 +228,46 @@ public class BlogController {
             return JSONResult.errorMsg("获取blog失败");
         }
     }
+
+//    下面是根据分类的id查询blog
+
+    @RequestMapping("selectPageForClassfiy")
+    @CrossOrigin
+    public JSONResult selectPageForClassfiy(@RequestBody PageRequest pageRequest) {
+        try {
+            PageResult blog1=blogService.getBlogPageByClassfiy(pageRequest);
+            return JSONResult.ok(blog1);
+        } catch (Exception e) {
+            return JSONResult.errorMsg("获取blog失败");
+        }
+    }
+    //    下面是根据分类的id查询blog
+
+    @RequestMapping("selectPageForTag")
+    @CrossOrigin
+    public JSONResult selectPageForTag(@RequestBody PageRequest pageRequest) {
+        try {
+            PageResult blog1=blogService.getBlogPageBytag(pageRequest);
+            return JSONResult.ok(blog1);
+        } catch (Exception e) {
+            return JSONResult.errorMsg("获取blog失败");
+        }
+    }
+
+    @RequestMapping("blogfromes")
+    @CrossOrigin
+    public JSONResult blogfromes(@RequestBody PageRequest pageRequest) {
+        try {
+            Map<String,String> field=new HashMap<>();
+            field.put("introduce",pageRequest.getEsString());
+            field.put("title",pageRequest.getEsString());
+            List<Map<String, Object>> list=esClientService.getBlogFromEsByPageRequest(field,pageRequest.getPageNum(),pageRequest.getPageSize(),"blog");
+            System.out.println(list);
+            return JSONResult.ok(list);
+        } catch (Exception e) {
+            return JSONResult.errorMsg("获取blog失败");
+        }
+    }
+
+
 }

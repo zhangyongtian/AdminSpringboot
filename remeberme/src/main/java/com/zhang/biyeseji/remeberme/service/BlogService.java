@@ -30,4 +30,8 @@ public interface BlogService {
     PageResult selectBlogPage(PageRequest pageRequest);
 
     Blog getBlogByIdAndUser(Integer id);
+
+    PageResult getBlogPageByClassfiy(PageRequest nowclassfiy);
+
+    PageResult getBlogPageBytag(PageRequest pageRequest);
 }

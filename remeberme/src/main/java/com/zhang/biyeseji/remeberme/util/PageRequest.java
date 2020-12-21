@@ -14,6 +14,17 @@ public class PageRequest {
 
     private Integer nowtag;
 
+    //这里定义的是es的查询字段
+    private  String esString;
+
+    public String getEsString() {
+        return esString;
+    }
+
+    public void setEsString(String esString) {
+        this.esString = esString;
+    }
+
     public void setNowclassfiy(Integer nowclassfiy) {
         this.nowclassfiy = nowclassfiy;
     }

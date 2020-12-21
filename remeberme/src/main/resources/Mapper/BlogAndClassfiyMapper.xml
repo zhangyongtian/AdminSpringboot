@@ -22,5 +22,33 @@
         delete from blog_classfiy where blogid=#{id}
 
     </delete>
+    <resultMap id="BaseResultMap" type="com.zhang.biyeseji.remeberme.pojo.Blog">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="blogid" jdbcType="INTEGER" property="blogid" />
+        <result column="zangcount" jdbcType="INTEGER" property="zangcount" />
+        <result column="likes" jdbcType="INTEGER" property="likes" />
+        <result column="headpic" jdbcType="VARCHAR" property="headpic" />
+        <result column="title" jdbcType="VARCHAR" property="title" />
+        <result column="introduce" jdbcType="VARCHAR" property="introduce" />
+        <result column="userid" jdbcType="INTEGER" property="userid" />
+        <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+        <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+        <result column="content" jdbcType="VARCHAR" property="content" />
+        <result column="isfabu" jdbcType="BIT" property="isfabu" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    blog.id, blog.blogid, blog.zangcount, blog.likes, blog.headpic, blog.title, blog.introduce, blog.userid, blog.createtime, blog.updatetime,
+    blog.content, blog.isfabu
+  </sql>
+    <select id="selectBlogByClassFiy" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/> from blog_classfiy left join blog on blog_classfiy.blogid=blog.id
+         where blog_classfiy.blogclassfiy=#{nowclassfiy}
+    </select>
+
+    <select id="selectBlogByTag" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+         from blog_tag left join blog on blog_tag.blogid=blog.id where blog_tag.tagid=#{nowclassfiy}
+    </select>
 
 </mapper>

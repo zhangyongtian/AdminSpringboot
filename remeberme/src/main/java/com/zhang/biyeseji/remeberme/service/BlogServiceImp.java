@@ -4,16 +4,12 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.zhang.biyeseji.remeberme.mapper.*;
 import com.zhang.biyeseji.remeberme.pojo.*;
-import com.zhang.biyeseji.remeberme.util.JSONResult;
 import com.zhang.biyeseji.remeberme.util.PageRequest;
 import com.zhang.biyeseji.remeberme.util.PageRequestHasId;
 import com.zhang.biyeseji.remeberme.util.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -33,6 +29,9 @@ public class BlogServiceImp implements BlogService{
 
     @Autowired
     UseryonghuMapper useryonghuMapper;
+
+    @Autowired
+    EsClientService esClientService;
 
 
     @Override
@@ -82,6 +81,10 @@ public class BlogServiceImp implements BlogService{
         });
 
         blogAndTagMapper.saveBlogAndTagList(blogAndTagList);
+
+//        插入数据以后保存一份到es
+
+        esClientService.saveToEs(blog);
 
     }
 
@@ -273,6 +276,60 @@ public class BlogServiceImp implements BlogService{
         List<Blogtags> blogtags=blogMapper.selectTagsByblogId(blog.getId());
         blog.setBlogtags(blogtags);
         return blog;
+    }
+
+    @Override
+    public PageResult getBlogPageByClassfiy(PageRequest nowclassfiy) {
+//        根据classfiy查询所有的blog
+        PageResult pageResult=new PageResult();
+        Page page=PageHelper.startPage(nowclassfiy.getPageNum(),nowclassfiy.getPageSize());
+        List<Blog> blogList=blogAndClassfiyMapper.selectBlogByClassFiy(nowclassfiy.getNowclassfiy());
+        blogList.forEach(blog -> {
+            Integer userid=blog.getUserid();
+//            Useryonghu useryonghu=useryonghuMapper.selectByPrimaryKey(userid);
+//            blog.setUseryonghu(useryonghu);
+            List<Blogclassfiy> classfiys=blogMapper.selectClassfiysByblogId(blog.getId());
+            blog.setBlogclassfiys(classfiys);
+            List<Blogtags> blogtags=blogMapper.selectTagsByblogId(blog.getId());
+            blog.setBlogtags(blogtags);
+            Useryonghu useryonghu=useryonghuMapper.selectByPrimaryKey(blog.getUserid());
+            useryonghu.setUserpassword(null);
+            blog.setUseryonghu(useryonghu);
+
+        });
+        pageResult.setContent(blogList);
+        pageResult.setTotalPages(page.getPages());
+        pageResult.setTotalSize(page.getTotal());
+        pageResult.setPageSize(nowclassfiy.getPageSize());
+        pageResult.setPageNum(nowclassfiy.getPageNum());
+        return pageResult;
+    }
+
+    @Override
+    public PageResult getBlogPageBytag(PageRequest nowclassfiy) {
+        PageResult pageResult=new PageResult();
+        Page page=PageHelper.startPage(nowclassfiy.getPageNum(),nowclassfiy.getPageSize());
+        List<Blog> blogList=blogAndClassfiyMapper.selectBlogByTag(nowclassfiy.getNowtag());
+        blogList.forEach(blog -> {
+            Integer userid=blog.getUserid();
+//            Useryonghu useryonghu=useryonghuMapper.selectByPrimaryKey(userid);
+//            blog.setUseryonghu(useryonghu);
+            List<Blogclassfiy> classfiys=blogMapper.selectClassfiysByblogId(blog.getId());
+            blog.setBlogclassfiys(classfiys);
+            List<Blogtags> blogtags=blogMapper.selectTagsByblogId(blog.getId());
+            blog.setBlogtags(blogtags);
+            Useryonghu useryonghu=useryonghuMapper.selectByPrimaryKey(blog.getUserid());
+            useryonghu.setUserpassword(null);
+            blog.setUseryonghu(useryonghu);
+
+        });
+        pageResult.setContent(blogList);
+        pageResult.setTotalPages(page.getPages());
+        pageResult.setTotalSize(page.getTotal());
+        pageResult.setPageSize(nowclassfiy.getPageSize());
+        pageResult.setPageNum(nowclassfiy.getPageNum());
+        return pageResult;
+
     }
 
 
