@@ -4,6 +4,8 @@ import org.apache.ibatis.cache.Cache;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
+import java.util.concurrent.TimeUnit;
+
 public class RedisCache implements Cache {
     private String id;
 
@@ -22,7 +24,10 @@ public class RedisCache implements Cache {
         RedisTemplate redisTemplate= (RedisTemplate) ShiroGetApplication.getmYapplicationContext().getBean("redisTemplate");
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setHashKeySerializer(new StringRedisSerializer());
+
         redisTemplate.opsForHash().put(this.id,o.toString(),o1);
+        int nihao=(int)(Math.random()*20);
+        redisTemplate.expire(this.id,nihao,TimeUnit.SECONDS);
     }
 
     @Override

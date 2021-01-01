@@ -37,6 +37,7 @@ import org.elasticsearch.search.fetch.subphase.highlight.HighlightField;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.IOException;
@@ -60,6 +61,8 @@ public class Test {
 
     @Autowired
     UseryonghuMapper useryonghuMapper;
+    @Autowired
+    RedisTemplate redisTemplate;
 
     @Autowired
     EsClientService esClientService;
@@ -169,11 +172,16 @@ public class Test {
 //        field.put("title","斯");
 //        List<Map<String, Object>> list=esClientService.getBlogFromEsByPageRequest(field,1,1,"blog");
 //        System.out.println(list);
+//
+//        DeleteRequest request = new DeleteRequest(
+//                "blog",
+//                "54");
+//        restHighLevelClient.delete(request,RequestOptions.DEFAULT);
+//        redisTemplate.opsForValue().set("nihao","jiushi");
+        int nihao=(int)(Math.random()*10);
+        redisTemplate.expire("this.id",nihao,TimeUnit.SECONDS);
 
-        DeleteRequest request = new DeleteRequest(
-                "blog",
-                "54");
-        restHighLevelClient.delete(request,RequestOptions.DEFAULT);
+        System.out.println(nihao);
     }
 
 }
