@@ -98,6 +98,12 @@ userimage,role.rolename as rolename from useryonghu-->
       <result property="rolename" column="rolename"></result>
     </collection>
   </resultMap>
+
+<!--  这来是查询用户有的角色-->
+  <select id="selectRoles" parameterType="java.lang.Integer" resultType="com.zhang.biyeseji.remeberme.pojo.Role">
+     select role.roleid,role.rolename from useryonghu left join user_role on useryonghu.id=user_role.userid left join role on user_role.roleid=role.roleid where useryonghu.id=#{id};
+  </select>
+
   <select id="selectByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.UseryonghuExample" resultMap="BaseResultMap">
     select
     <if test="distinct">

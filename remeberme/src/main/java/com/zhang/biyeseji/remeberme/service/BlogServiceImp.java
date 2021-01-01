@@ -51,7 +51,7 @@ public class BlogServiceImp implements BlogService{
         UseryonghuExample example=new UseryonghuExample();
         UseryonghuExample.Criteria criteria = example.createCriteria();
         criteria.andIdEqualTo(blogContent.getUserid());
-        useryonghuMapper.updateByExample(useryonghu,example);
+        useryonghuMapper.updateByExampleSelective(useryonghu,example);
 
         blog.setCreatetime(new Date());
         blog.setUpdatetime(new Date());
@@ -192,7 +192,16 @@ public class BlogServiceImp implements BlogService{
     @Override
     public void deleteBlogById(Integer id) {
 
+        esClientService.deleteBlogFormEs(id.toString());
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         blogMapper.deleteByPrimaryKey(id);
+        blogAndClassfiyMapper.deleteByBlogid(id);
+        blogAndTagMapper.deleteByBlogId(id);
+
     }
 
     @Override
@@ -207,7 +216,11 @@ public class BlogServiceImp implements BlogService{
 
     @Override
     public void updateBlog(BlogContent blogContent) {
+//        先删除es里面的内容
+       esClientService.deleteBlogFormEs(blogContent.getId().toString());
         //首先更新blog
+
+
         BlogExample blogExample=new BlogExample();
         BlogExample.Criteria criteria = blogExample.createCriteria();
         criteria.andIdEqualTo(blogContent.getId());
@@ -244,6 +257,13 @@ public class BlogServiceImp implements BlogService{
 
 
         blogAndClassfiyMapper.saveBlogAndClassfiyList(classfiys1);
+
+        Blog blogtemp=blogMapper.selectByPrimaryKey(blogContent.getId());
+        Useryonghu useryonghu=useryonghuMapper.selectByPrimaryKey(blogtemp.getUserid());
+        useryonghu.setSalt(null);
+        useryonghu.setUserpassword(null);
+        blogtemp.setUseryonghu(useryonghu);
+        esClientService.saveToEs(blogtemp);
     }
 
     @Override

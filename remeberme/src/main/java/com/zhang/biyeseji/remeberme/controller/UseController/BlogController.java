@@ -238,6 +238,7 @@ public class BlogController {
             PageResult blog1=blogService.getBlogPageByClassfiy(pageRequest);
             return JSONResult.ok(blog1);
         } catch (Exception e) {
+            System.out.println(e);
             return JSONResult.errorMsg("获取blog失败");
         }
     }

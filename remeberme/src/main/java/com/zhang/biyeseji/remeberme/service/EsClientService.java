@@ -13,4 +13,6 @@ public interface EsClientService {
 
     //定义个参数是定义要查询的字段用map
     public List<Map<String,Object>> getBlogFromEsByPageRequest(Map<String,String> fieldMap,Integer pageNum,Integer pageSize,String indexs);
+
+    public void deleteBlogFormEs(String blogid);
 }

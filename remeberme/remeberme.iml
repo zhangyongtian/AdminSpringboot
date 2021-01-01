@@ -25,6 +25,72 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.elasticsearch.client:elasticsearch-rest-high-level-client:7.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch:7.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch-core:7.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch-secure-sm:7.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch-x-content:7.4.2" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-smile:2.11.3" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.11.3" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.11.3" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch-geo:7.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-core:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-analyzers-common:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-backward-codecs:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-grouping:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-highlighter:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-join:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-memory:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-misc:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-queries:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-queryparser:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-sandbox:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-spatial:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-spatial-extras:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-spatial3d:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-suggest:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch-cli:7.4.2" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.jopt-simple:jopt-simple:5.0.2" level="project" />
+    <orderEntry type="library" name="Maven: com.carrotsearch:hppc:0.8.1" level="project" />
+    <orderEntry type="library" name="Maven: joda-time:joda-time:2.10.3" level="project" />
+    <orderEntry type="library" name="Maven: com.tdunning:t-digest:3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.hdrhistogram:HdrHistogram:2.1.9" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch:jna:4.5.1" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch.client:elasticsearch-rest-client:7.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.13" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.13" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpasyncclient:4.1.4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore-nio:4.4.13" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch.plugin:mapper-extras-client:7.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch.plugin:parent-join-client:7.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch.plugin:aggs-matrix-stats-client:7.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch.plugin:rank-eval-client:7.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch.plugin:lang-mustache-client:7.4.2" level="project" />
+    <orderEntry type="library" name="Maven: com.github.spullara.mustache.java:compiler:0.9.3" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.cloud:spring-cloud-starter-alicloud-oss:2.1.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.cloud:spring-cloud-alicloud-oss:2.1.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.cloud:spring-cloud-alicloud-context:2.1.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.cloud:alicloud-context:1.0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-commons:2.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:5.4.1" level="project" />
+    <orderEntry type="library" name="Maven: com.aliyun.oss:aliyun-sdk-oss:3.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jdom:jdom:1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.jersey:jersey-json:1.9" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jettison:jettison:1.1" level="project" />
+    <orderEntry type="library" name="Maven: stax:stax-api:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.xml.bind:jaxb-impl:2.2.3-1" level="project" />
+    <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.3.1" level="project" />
+    <orderEntry type="library" name="Maven: javax.activation:javax.activation-api:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-core-asl:1.8.3" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.8.3" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-jaxrs:1.8.3" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-xc:1.8.3" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.jersey:jersey-core:1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-core:3.4.0" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20170516" level="project" />
+    <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-ram:3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-sts:3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-ecs:4.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-activemq:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: jakarta.annotation:jakarta.annotation-api:1.3.5" level="project" />

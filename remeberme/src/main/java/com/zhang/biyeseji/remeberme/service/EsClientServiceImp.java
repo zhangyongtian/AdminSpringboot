@@ -8,6 +8,7 @@ import com.zhang.biyeseji.remeberme.pojo.Blog;
 import com.zhang.biyeseji.remeberme.pojo.Blogclassfiy;
 import com.zhang.biyeseji.remeberme.pojo.Blogtags;
 import com.zhang.biyeseji.remeberme.pojo.Useryonghu;
+import org.elasticsearch.action.delete.DeleteRequest;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchRequest;
@@ -64,11 +65,6 @@ public class EsClientServiceImp implements EsClientService {
         IndexResponse indexResponse= null;
         try {
             indexResponse = restHighLevelClient.index(indexRequest, Es.COMMON_OPTIONS);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            restHighLevelClient.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -135,5 +131,17 @@ public class EsClientServiceImp implements EsClientService {
             list.add(hit.getSourceAsMap());
         }
         return list;
+    }
+
+    @Override
+    public void deleteBlogFormEs(String blogid) {
+        DeleteRequest request = new DeleteRequest(
+                "blog",
+                blogid);
+        try {
+            restHighLevelClient.delete(request,RequestOptions.DEFAULT);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

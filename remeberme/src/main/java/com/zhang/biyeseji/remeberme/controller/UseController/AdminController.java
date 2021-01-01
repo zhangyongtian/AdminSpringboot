@@ -141,4 +141,17 @@ public class AdminController {
             return JSONResult.errorMsg("更改用户的角色失败");
         }
     }
+
+
+    @RequiresRoles(value = {"superadmin","admin"},logical= Logical.OR)
+    @RequestMapping("getUserAllRole")
+    @CrossOrigin
+    public JSONResult getUserAllRole(@RequestBody Useryonghu useryonghu) {
+        try {
+            List<Role> role=useryonghuService.selectUserRoles(useryonghu.getId());
+            return JSONResult.ok(role);
+        } catch (Exception e) {
+            return JSONResult.errorMsg("获取用户的角色失败");
+        }
+    }
 }

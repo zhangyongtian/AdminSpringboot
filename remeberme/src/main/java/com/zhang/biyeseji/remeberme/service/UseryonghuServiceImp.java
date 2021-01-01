@@ -4,6 +4,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.zhang.biyeseji.remeberme.mapper.UserAndRoleMapper;
 import com.zhang.biyeseji.remeberme.mapper.UseryonghuMapper;
+import com.zhang.biyeseji.remeberme.pojo.Role;
 import com.zhang.biyeseji.remeberme.pojo.Useryonghu;
 import com.zhang.biyeseji.remeberme.pojo.UseryonghuExample;
 import com.zhang.biyeseji.remeberme.util.PageRequest;
@@ -65,4 +66,11 @@ public class UseryonghuServiceImp implements UseryonghuService {
 
         userAndRoleMapper.insertRoles(useryonghu);
     }
+
+    @Override
+    public List<Role> selectUserRoles(Integer id) {
+
+        return useryonghuMapper.selectRoles(id);
+    }
+
 }

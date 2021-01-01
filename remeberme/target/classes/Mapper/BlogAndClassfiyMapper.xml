@@ -43,12 +43,12 @@
   </sql>
     <select id="selectBlogByClassFiy" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select <include refid="Base_Column_List"/> from blog_classfiy left join blog on blog_classfiy.blogid=blog.id
-         where blog_classfiy.blogclassfiy=#{nowclassfiy}
+         where blog_classfiy.blogclassfiy=#{nowclassfiy} and blog.isfabu=1
     </select>
 
     <select id="selectBlogByTag" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select <include refid="Base_Column_List"/>
-         from blog_tag left join blog on blog_tag.blogid=blog.id where blog_tag.tagid=#{nowclassfiy}
+         from blog_tag left join blog on blog_tag.blogid=blog.id where blog_tag.tagid=#{nowclassfiy} and blog.isfabu=1
     </select>
 
 </mapper>

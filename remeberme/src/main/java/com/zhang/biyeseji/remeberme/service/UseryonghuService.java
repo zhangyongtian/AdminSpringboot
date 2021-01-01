@@ -1,5 +1,6 @@
 package com.zhang.biyeseji.remeberme.service;
 
+import com.zhang.biyeseji.remeberme.pojo.Role;
 import com.zhang.biyeseji.remeberme.pojo.Useryonghu;
 import com.zhang.biyeseji.remeberme.util.PageRequest;
 import com.zhang.biyeseji.remeberme.util.PageResult;
@@ -18,4 +19,6 @@ public interface UseryonghuService {
     void deleteUseryonghuById(Integer id);
 
     void updataUseryonghuRoles(Useryonghu useryonghu);
+
+    List<Role> selectUserRoles(Integer id);
 }

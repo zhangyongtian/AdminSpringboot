@@ -2,6 +2,9 @@ server:
   port: 8089
   servlet:
     context-path: /rememberme
+
+  tomcat:
+    max-connections: 1000
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource

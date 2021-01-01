@@ -15,6 +15,7 @@ import com.zhang.biyeseji.remeberme.pojo.Useryonghu;
 import com.zhang.biyeseji.remeberme.service.EsClientService;
 import com.zhang.biyeseji.remeberme.util.JWTService;
 import org.apache.catalina.User;
+import org.elasticsearch.action.delete.DeleteRequest;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
@@ -159,15 +160,20 @@ public class Test {
         System.out.println(list);
     }
     @org.junit.Test
-    public void testnihao(){
-        Blog blog=new Blog();
-        blog.setId(4);
-        esClientService.saveToEs(blog);
+    public void testnihao() throws IOException {
+//        Blog blog=new Blog();
+//        blog.setId(4);
+//        esClientService.saveToEs(blog);
 //        Map<String,String> field=new HashMap<>();
 //        field.put("introduce","发不知道");
 //        field.put("title","斯");
 //        List<Map<String, Object>> list=esClientService.getBlogFromEsByPageRequest(field,1,1,"blog");
 //        System.out.println(list);
+
+        DeleteRequest request = new DeleteRequest(
+                "blog",
+                "54");
+        restHighLevelClient.delete(request,RequestOptions.DEFAULT);
     }
 
 }

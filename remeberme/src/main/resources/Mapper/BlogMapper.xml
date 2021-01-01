@@ -82,7 +82,7 @@
 <!--  下面是获取所有的blog-->
 
   <select id="selectAllBlog" resultType="com.zhang.biyeseji.remeberme.pojo.Blog">
-    select <include refid="Base_Column_List"></include> from blog
+    select <include refid="Base_Column_List"></include> from blog where  isfabu=1
   </select>
 
   <select id="selectByExample" parameterType="com.zhang.biyeseji.remeberme.pojo.BlogExample" resultMap="BaseResultMap">
@@ -102,7 +102,7 @@
 
 <!--  对博客进行分页-->
   <select id="getPageResultBlog" resultType="com.zhang.biyeseji.remeberme.pojo.Blog">
-        select * from blog
+        select * from blog where isfabu=1
   </select>
 
 <!--  根据id查blog的分类-->

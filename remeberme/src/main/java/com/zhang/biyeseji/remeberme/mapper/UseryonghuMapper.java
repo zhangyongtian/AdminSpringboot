@@ -1,5 +1,6 @@
 package com.zhang.biyeseji.remeberme.mapper;
 
+import com.zhang.biyeseji.remeberme.pojo.Role;
 import com.zhang.biyeseji.remeberme.pojo.Useryonghu;
 import com.zhang.biyeseji.remeberme.pojo.UseryonghuExample;
 import java.util.List;
@@ -39,4 +40,6 @@ public interface UseryonghuMapper {
     List<Useryonghu> selectAllUseryonghuAndRole();
 
     Useryonghu selectUseryonghuAndRoleById(Integer id);
+
+    List<Role> selectRoles(Integer id);
 }
