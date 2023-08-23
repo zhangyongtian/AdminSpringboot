@@ -1,6 +1,6 @@
 # AdminSpringboot
 
-毕业设计后台springboot代码11月19日进行用户注册授权开发使用的是shiromybatis自动生成代码的注意点。
+毕业设计后台springboot代码11月19日进行用户注册授权开发使用的是shiro,mybatis自动生成代码的注意点。
 
 1. 引入依赖
 ```xml
